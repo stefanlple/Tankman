@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7g0a83n5hp48"]
+[gd_scene load_steps=10 format=3 uid="uid://c7g0a83n5hp48"]
 
 [ext_resource type="Texture2D" uid="uid://bel38g2o6k6q1" path="res://pixil-frame-0.png" id="1_nc2hw"]
 [ext_resource type="Texture2D" uid="uid://dvl6yj3j3ea2x" path="res://pixil-frame-0 (1).png" id="2_17fh0"]
+[ext_resource type="Texture2D" uid="uid://cm24tom568rvg" path="res://pixil-frame-0 (2).png" id="3_3bgd5"]
+[ext_resource type="Script" path="res://TankControl.gd" id="4_58m1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajqe5"]
 size = Vector2(1597.12, 1703.31)
@@ -14,6 +16,9 @@ size = Vector2(1597.12, 1703.31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0m36"]
 size = Vector2(1597.12, 1703.31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvn7c"]
+size = Vector2(1495.07, 1565.52)
 
 [node name="Base" type="Node2D"]
 
@@ -100,3 +105,31 @@ texture = ExtResource("2_17fh0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
 position = Vector2(5.01221, -56.7769)
 shape = SubResource("RectangleShape2D_o0m36")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+z_as_relative = false
+position = Vector2(2388, 1589)
+scale = Vector2(0.1525, 0.145)
+mass = 0.01
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("4_58m1m")
+
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="RigidBody2D"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(39.3442, -117.242)
+scale = Vector2(0.942624, 0.991373)
+texture = ExtResource("3_3bgd5")
+
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="RigidBody2D/Pixil-frame-0(2)"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(6.96094, -1064.35)
+scale = Vector2(-0.448679, 0.713111)
+texture = ExtResource("3_3bgd5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(19.6768, -44.8291)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rvn7c")
