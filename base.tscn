@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7g0a83n5hp48"]
+
+[ext_resource type="Texture2D" uid="uid://bel38g2o6k6q1" path="res://pixil-frame-0.png" id="1_nc2hw"]
+[ext_resource type="Texture2D" uid="uid://dvl6yj3j3ea2x" path="res://pixil-frame-0 (1).png" id="2_17fh0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajqe5"]
+size = Vector2(1597.12, 1703.31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh330"]
+size = Vector2(1597.12, 1703.31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yne4"]
+size = Vector2(1597.12, 1703.31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0m36"]
+size = Vector2(1597.12, 1703.31)
+
+[node name="Base" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2393, 1584)
+scale = Vector2(1.75683, 1.08302)
+zoom = Vector2(0.2, 0.2)
+
+[node name="BackGround" type="Node" parent="."]
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="BackGround"]
+position = Vector2(792, 859)
+texture = ExtResource("1_nc2hw")
+
+[node name="Pixil-frame-1" type="Sprite2D" parent="BackGround"]
+position = Vector2(2383, 866)
+texture = ExtResource("1_nc2hw")
+
+[node name="Pixil-frame-2" type="Sprite2D" parent="BackGround"]
+position = Vector2(3935, 861)
+texture = ExtResource("1_nc2hw")
+
+[node name="Pixil-frame-3" type="Sprite2D" parent="BackGround"]
+position = Vector2(802, 2335)
+texture = ExtResource("1_nc2hw")
+
+[node name="Pixil-frame-4" type="Sprite2D" parent="BackGround"]
+position = Vector2(2396, 2331)
+texture = ExtResource("1_nc2hw")
+
+[node name="Pixil-frame-5" type="Sprite2D" parent="BackGround"]
+position = Vector2(3935, 2331)
+texture = ExtResource("1_nc2hw")
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2(2392, 3169)
+scale = Vector2(2.9995, 0.0352256)
+
+[node name="Wall" type="Sprite2D" parent="Walls/Wall2"]
+position = Vector2(-6.90112, 0)
+scale = Vector2(1.00863, 1)
+texture = ExtResource("2_17fh0")
+
+[node name="wall2+" type="CollisionShape2D" parent="Walls/Wall2"]
+position = Vector2(-4.50079, -56.7813)
+shape = SubResource("RectangleShape2D_ajqe5")
+
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
+position = Vector2(-23, 1603)
+rotation = 1.5707
+scale = Vector2(1.99944, 0.0352256)
+
+[node name="Wall3" type="Sprite2D" parent="Walls/Wall3"]
+texture = ExtResource("2_17fh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
+position = Vector2(-0.726807, -56.777)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rh330")
+
+[node name="Wall4" type="StaticBody2D" parent="Walls"]
+position = Vector2(4762, 1634)
+rotation = 1.5707
+scale = Vector2(1.99948, 0.0352256)
+
+[node name="Wall4" type="Sprite2D" parent="Walls/Wall4"]
+texture = ExtResource("2_17fh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
+position = Vector2(-4.50073, -56.777)
+shape = SubResource("RectangleShape2D_2yne4")
+
+[node name="Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(2359, 34)
+scale = Vector2(3.03951, 0.0352256)
+
+[node name="Wall" type="Sprite2D" parent="Walls/Wall"]
+position = Vector2(3.38971, 0)
+scale = Vector2(0.995763, 1)
+texture = ExtResource("2_17fh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+position = Vector2(5.01221, -56.7769)
+shape = SubResource("RectangleShape2D_o0m36")
