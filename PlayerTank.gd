@@ -29,7 +29,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Shooting_player" +playerNumber):
 		if(canShoot):
 			fire()
-	move_and_slide()
+	var coll = move_and_collide(velocity*delta)
+	if coll:
+		print("I collided with ", coll.get_collider().name)
+
 
 
 func fire():
