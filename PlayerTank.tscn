@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch6w0f1ww01oc"]
+
+[ext_resource type="Script" path="res://PlayerTank.gd" id="1_b706n"]
+[ext_resource type="Texture2D" uid="uid://cm24tom568rvg" path="res://pixil-frame-0 (2).png" id="2_o1xt0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyhrb"]
+size = Vector2(213.278, 299.654)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(2108, 1225)
+scale = Vector2(1.4, 1.2)
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("1_b706n")
+playerNumber = "2"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(4293.74, 2790.28)
+scale = Vector2(0.1525, 0.145)
+shape = SubResource("RectangleShape2D_lyhrb")
+
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2, 2)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_o1xt0")
+
+[node name="Turret" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(94, 6)
+scale = Vector2(0.119998, -0.0400006)
+texture = ExtResource("2_o1xt0")
+
+[node name="ShootingPoint" type="Node" parent="Turret"]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
