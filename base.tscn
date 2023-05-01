@@ -17,8 +17,8 @@ size = Vector2(1597.12, 1703.31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0m36"]
 size = Vector2(1597.12, 1703.31)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvn7c"]
-size = Vector2(1495.07, 1565.52)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyhrb"]
+size = Vector2(213.278, 299.654)
 
 [node name="Base" type="Node2D"]
 
@@ -78,7 +78,6 @@ texture = ExtResource("2_17fh0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
 position = Vector2(-0.726807, -56.777)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rh330")
 
 [node name="Wall4" type="StaticBody2D" parent="Walls"]
@@ -108,18 +107,23 @@ shape = SubResource("RectangleShape2D_o0m36")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 z_as_relative = false
-position = Vector2(2388, 1589)
+position = Vector2(4303, 2799)
 scale = Vector2(0.1525, 0.145)
 mass = 0.01
 gravity_scale = 0.0
 can_sleep = false
 script = ExtResource("4_58m1m")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-1.7207, -4.99902)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lyhrb")
+
 [node name="Pixil-frame-0(2)" type="Sprite2D" parent="RigidBody2D"]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(39.3442, -117.242)
-scale = Vector2(0.942624, 0.991373)
+position = Vector2(0, -6.89453)
+scale = Vector2(-0.134643, 0.187926)
 texture = ExtResource("3_3bgd5")
 
 [node name="Pixil-frame-0(2)" type="Sprite2D" parent="RigidBody2D/Pixil-frame-0(2)"]
@@ -128,8 +132,3 @@ y_sort_enabled = true
 position = Vector2(6.96094, -1064.35)
 scale = Vector2(-0.448679, 0.713111)
 texture = ExtResource("3_3bgd5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(19.6768, -44.8291)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_rvn7c")
