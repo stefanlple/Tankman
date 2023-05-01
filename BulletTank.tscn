@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://crxp268bh0lav"]
+
+[ext_resource type="Texture2D" uid="uid://cm24tom568rvg" path="res://pixil-frame-0 (2).png" id="1_wcqsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fym2"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2(2, 4)
+gravity_scale = 0.0
+
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="."]
+position = Vector2(35, 18)
+scale = Vector2(0.1, 0.05)
+texture = ExtResource("1_wcqsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.1, 0.05)
+shape = SubResource("RectangleShape2D_5fym2")

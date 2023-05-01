@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bel38g2o6k6q1" path="res://pixil-frame-0.png" id="1_nc2hw"]
 [ext_resource type="Texture2D" uid="uid://dvl6yj3j3ea2x" path="res://pixil-frame-0 (1).png" id="2_17fh0"]
 [ext_resource type="Texture2D" uid="uid://cm24tom568rvg" path="res://pixil-frame-0 (2).png" id="3_3bgd5"]
-[ext_resource type="Script" path="res://TankControl.gd" id="4_58m1m"]
+[ext_resource type="Script" path="res://PlayerTank.gd" id="3_g4k7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajqe5"]
 size = Vector2(1597.12, 1703.31)
@@ -105,30 +105,32 @@ texture = ExtResource("2_17fh0")
 position = Vector2(5.01221, -56.7769)
 shape = SubResource("RectangleShape2D_o0m36")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-z_as_relative = false
-position = Vector2(4303, 2799)
-scale = Vector2(0.1525, 0.145)
-mass = 0.01
-gravity_scale = 0.0
-can_sleep = false
-script = ExtResource("4_58m1m")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(2108, 1225)
+scale = Vector2(1.4, 1.2)
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("3_g4k7r")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(-1.7207, -4.99902)
-scale = Vector2(1, 1)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(4293.74, 2790.28)
+scale = Vector2(0.1525, 0.145)
 shape = SubResource("RectangleShape2D_lyhrb")
 
-[node name="Pixil-frame-0(2)" type="Sprite2D" parent="RigidBody2D"]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(0, -6.89453)
-scale = Vector2(-0.134643, 0.187926)
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="CharacterBody2D"]
+z_index = 1
+position = Vector2(2, 2)
+scale = Vector2(0.12, 0.12)
 texture = ExtResource("3_3bgd5")
 
-[node name="Pixil-frame-0(2)" type="Sprite2D" parent="RigidBody2D/Pixil-frame-0(2)"]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(6.96094, -1064.35)
-scale = Vector2(-0.448679, 0.713111)
+[node name="Turret" type="Sprite2D" parent="CharacterBody2D"]
+z_index = 1
+position = Vector2(94, 6)
+scale = Vector2(0.119998, -0.0400006)
 texture = ExtResource("3_3bgd5")
+
+[node name="ShootingPoint" type="Node" parent="CharacterBody2D/Turret"]
+
+[node name="Timer" type="Timer" parent="CharacterBody2D"]
+
+[connection signal="timeout" from="CharacterBody2D/Timer" to="CharacterBody2D" method="_on_timer_timeout"]
