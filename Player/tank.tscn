@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://2vy4cmtnened"]
+
+[ext_resource type="Script" path="res://Player/tank.gd" id="1_2gxia"]
+[ext_resource type="Texture2D" uid="uid://b0tkqfhjle5po" path="res://download.jpg" id="2_k888k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78wpk"]
+size = Vector2(64, 64)
+
+[node name="Tank" type="CharacterBody2D"]
+script = ExtResource("1_2gxia")
+
+[node name="Download" type="Sprite2D" parent="."]
+texture = ExtResource("2_k888k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_78wpk")
+one_way_collision_margin = 0.0
