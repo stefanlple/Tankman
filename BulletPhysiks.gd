@@ -13,3 +13,12 @@ func _process(delta):
 
 func _on_body_entered(body):
 	print(body, " entered");
+
+
+func _on_area_2d_area_entered(area):
+	print(area.get_parent())
+	if (area.get_parent() is Wall):
+		area.get_parent().GetHit()
+		queue_free();
+	if (area.get_parent() is StaticBody2D):
+		queue_free() 

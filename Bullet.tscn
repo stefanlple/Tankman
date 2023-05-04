@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds3cx0axtsq08"]
+
+[ext_resource type="Script" path="res://BulletPhysiks.gd" id="1_0dn06"]
+[ext_resource type="Texture2D" uid="uid://oucc630q5fgk" path="res://Assets/Bullet.png" id="2_jdrjd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrrj4"]
+
+[node name="BulletTest2" type="RigidBody2D"]
+position = Vector2(73, 25)
+scale = Vector2(0.75, 0.36)
+mass = 0.01
+gravity_scale = 0.0
+max_contacts_reported = 10
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_0dn06")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(9.60682, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rrrj4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.60681, 0)
+rotation = 3.14088
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jdrjd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
