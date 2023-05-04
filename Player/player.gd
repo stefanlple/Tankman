@@ -34,3 +34,9 @@ func move(dir):
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		position+= vector_pos
+
+func _fixed_process(delta):
+	var collision := move_and_collide((Vector2(0,0) * delta))
+	if collision != null:
+		var body = collision.collider;
+		print("Collided with: ", body.name);
