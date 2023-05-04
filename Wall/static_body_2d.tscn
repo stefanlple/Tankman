@@ -16,7 +16,7 @@ script = ExtResource("1_8qrwj")
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_74rrc")
 
-[node name="StoneWall" type="Sprite2D" parent="."]
+[node name="WallTexture" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("1_ws2vp")
 centered = false

@@ -3,11 +3,16 @@ class_name Wall
 
 
 @export var indestructible = true;
-var hp = 1;
+@export var hp = 1;
+
+@onready var sprite = get_node("WallTexture")
+
+@export var NewSprite: Texture2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if (NewSprite != null):
+		sprite.set_texture(NewSprite);
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

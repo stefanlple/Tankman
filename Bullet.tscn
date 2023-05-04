@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://oucc630q5fgk" path="res://Assets/Bullet.png" id="2_jdrjd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrrj4"]
+size = Vector2(18.6667, 5.55555)
 
 [node name="BulletTest2" type="RigidBody2D"]
 position = Vector2(73, 25)
@@ -19,6 +20,7 @@ script = ExtResource("1_0dn06")
 position = Vector2(9.60682, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.273483, 0)
 shape = SubResource("RectangleShape2D_rrrj4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

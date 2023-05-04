@@ -15,6 +15,7 @@ var GRID_SIZE=16
 var canShoot = true;
 
 var bullet = preload("res://Bullet.tscn")
+
 var bullet_speed = 500;
 var inputs;
 var rotate;
@@ -82,5 +83,6 @@ func TakingHit():
 		Death()
 		
 func Death():
+	get_tree().get_root().get_node("Ingame").get_node("Manager").GameEnd(playerNumber)
 	queue_free() 
 

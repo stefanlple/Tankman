@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://w8lpttcsvvs5"]
+[gd_scene load_steps=11 format=3 uid="uid://w8lpttcsvvs5"]
 
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="1_8otdx"]
 [ext_resource type="PackedScene" uid="uid://bb83kugbm3u5e" path="res://Player/player.tscn" id="2_53gs3"]
 [ext_resource type="Texture2D" uid="uid://irhbh24ewas" path="res://Assets/WallSet.png" id="2_qh32p"]
 [ext_resource type="PackedScene" uid="uid://24n716bgdjaq" path="res://Wall/static_body_2d.tscn" id="4_70o3b"]
+[ext_resource type="Texture2D" uid="uid://bxfap4hyugjiu" path="res://Assets/DesWall.png" id="5_mshe4"]
+[ext_resource type="Script" path="res://GameManager.gd" id="6_imgcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74vk6"]
 texture = ExtResource("1_8otdx")
@@ -31,6 +33,12 @@ texture = ExtResource("2_qh32p")
 [sub_resource type="TileSet" id="TileSet_f2slv"]
 sources/1 = SubResource("TileSetAtlasSource_74vk6")
 sources/2 = SubResource("TileSetAtlasSource_lf560")
+
+[sub_resource type="LabelSettings" id="LabelSettings_giuxl"]
+line_spacing = 10.0
+font_size = 25
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Ingame" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
@@ -366,3 +374,367 @@ position = Vector2(400, 384)
 
 [node name="OuterWall53" parent="Walls" instance=ExtResource("4_70o3b")]
 position = Vector2(400, 400)
+
+[node name="InnerWalls" type="Node" parent="."]
+
+[node name="DestWall27" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(129, 0)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall11" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(336, 128)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall9" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(336, 144)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall10" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(336, 160)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall5" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(64, 240)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall6" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(64, 256)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall7" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(336, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall8" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(64, 208)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall3" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(128, 65)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall4" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(129, 96)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(129, 32)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall14" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(64, 306)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall13" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(64, 224)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall12" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(161, 144)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall15" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(64, 272)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall28" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(207, 256)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall29" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(224, 320)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall30" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(225, 351)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall31" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(208, 290)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall32" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(225, 383)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall34" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(240, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall35" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(272, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall36" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(288, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall37" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(256, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall38" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(320, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall39" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(336, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall40" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(368, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall55" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(224, 224)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall56" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(240, 223)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall57" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(272, 223)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall58" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(288, 223)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall59" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(256, 223)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall60" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(320, 223)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall61" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(336, 223)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall62" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(304, 223)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall41" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(384, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall42" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(352, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall43" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(304, 239)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall44" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(337, 94)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall45" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(0, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall46" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(16, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall47" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(48, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall48" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(64, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall49" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(32, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall50" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(96, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall51" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(112, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall52" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(144, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall53" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(128, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall54" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(80, 176)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall18" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(48, 160)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall19" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(64, 160)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall20" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(96, 160)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall21" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(112, 160)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall24" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(336, 192)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall25" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(128, 160)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall22" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(80, 160)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="DestWall26" parent="InnerWalls" instance=ExtResource("4_70o3b")]
+position = Vector2(161, 114)
+indestructible = false
+NewSprite = ExtResource("5_mshe4")
+
+[node name="InnerUnDestWall" type="Node" parent="InnerWalls"]
+
+[node name="OuterWall13" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(160, 176)
+
+[node name="OuterWall14" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(160, 224)
+
+[node name="OuterWall15" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(160, 208)
+
+[node name="OuterWall16" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(160, 192)
+
+[node name="OuterWall9" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(208, 176)
+
+[node name="OuterWall10" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(208, 224)
+
+[node name="OuterWall11" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(208, 208)
+
+[node name="OuterWall12" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(208, 192)
+
+[node name="OuterWall7" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(192, 176)
+
+[node name="OuterWall8" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(176, 176)
+
+[node name="OuterWall5" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(192, 224)
+
+[node name="OuterWall6" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(176, 224)
+
+[node name="OuterWall3" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(192, 208)
+
+[node name="OuterWall4" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(176, 208)
+
+[node name="OuterWall2" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(192, 192)
+
+[node name="OuterWall" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
+position = Vector2(176, 192)
+
+[node name="Manager" type="Node" parent="."]
+script = ExtResource("6_imgcf")
+
+[node name="Timer" type="Timer" parent="Manager"]
+wait_time = 1.5
+
+[node name="BackGroundText" type="Sprite2D" parent="Manager"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(200, 205)
+scale = Vector2(19.625, 5.25)
+texture = ExtResource("1_8otdx")
+
+[node name="EndText" type="Label" parent="Manager"]
+visible = false
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 416.0
+offset_bottom = 414.0
+text = "win"
+label_settings = SubResource("LabelSettings_giuxl")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
