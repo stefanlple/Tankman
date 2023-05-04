@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://24n716bgdjaq"]
+
+[ext_resource type="Texture2D" uid="uid://cxvldrv3icbw0" path="res://Assets/StoneWall.png" id="1_ws2vp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74rrc"]
+size = Vector2(16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(-16, -16)
+
+[node name="StoneWall" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("1_ws2vp")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_74rrc")
