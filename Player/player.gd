@@ -1,8 +1,9 @@
 extends CharacterBody2D
+class_name Player
 
 @export var playerNumber = "1";
 @export var SpriteColor = Color(255, 0, 0, 1);
-
+@export var HP = 1;
 
 var GRID_SIZE=16
 @onready var ray= $RayCast2D
@@ -62,12 +63,24 @@ func fire():
 	canShoot = false
 	timer.start()
 	var bullet_inst = bullet.instantiate()
+	bullet_inst.SetOwner(playerNumber)
 	bullet_inst.set_position(ShootingPoint.get_global_position())
 	bullet_inst.set_rotation_degrees(ShootingPoint.get_global_rotation_degrees())
 	bullet_inst.apply_central_impulse(lastdir * bullet_speed)
 	get_tree().get_root().call_deferred("add_child",bullet_inst)
 
 
+func MineButtlet(pNumber):
+	return (playerNumber == pNumber)
+
 func _on_timer_timeout():
 	canShoot = true;
+
+func TakingHit():
+	HP = HP-1;
+	if(HP <= 0):
+		Death()
+		
+func Death():
+	queue_free() 
 
