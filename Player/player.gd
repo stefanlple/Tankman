@@ -17,7 +17,7 @@ var canShoot = true;
 
 var bullet = preload("res://Bullet.tscn")
 
-var bullet_speed = 500;
+var bullet_speed = 640;
 var inputs;
 var rotate;
 
