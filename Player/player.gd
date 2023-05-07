@@ -2,8 +2,9 @@ extends CharacterBody2D
 class_name Player
 
 @export var playerNumber = "1";
-@export var SpriteColor = Color(255, 0, 0, 1);
+#@export var SpriteColor = Color(255, 0, 0, 1);
 @export var HP = 1;
+@export var texture:Texture2D;
 
 var GRID_SIZE=16
 @onready var ray= $RayCast2D
@@ -31,7 +32,8 @@ func _ready():
 	"Move_Right_Player" + playerNumber:Vector2.RIGHT,
 	}
 	rotate = inputs;
-	sprite.modulate = SpriteColor;
+	#sprite.modulate = SpriteColor;
+	sprite.set_texture(texture);
 
 func _unhandled_input(event):
 	for dir in inputs.keys():

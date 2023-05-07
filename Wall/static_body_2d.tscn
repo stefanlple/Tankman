@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://24n716bgdjaq"]
 
 [ext_resource type="Script" path="res://Wall/Wall.gd" id="1_8qrwj"]
-[ext_resource type="Texture2D" uid="uid://cxvldrv3icbw0" path="res://Assets/StoneWall.png" id="1_ws2vp"]
+[ext_resource type="Texture2D" uid="uid://b6d8tekvoocig" path="res://Assets/tiles/wall center.png" id="2_f75cp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74rrc"]
 size = Vector2(16, 16)
@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_74rrc")
 
 [node name="WallTexture" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("1_ws2vp")
+texture = ExtResource("2_f75cp")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

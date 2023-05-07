@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb83kugbm3u5e"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_aoxi6"]
-[ext_resource type="Texture2D" uid="uid://dnqopi4g60ps0" path="res://Assets/OthertankSpriteTest.png" id="2_iy6tn"]
+[ext_resource type="Texture2D" uid="uid://budglk2ynqbxw" path="res://Assets/tiles/blue tank.png" id="2_fshvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n661p"]
 size = Vector2(16, 16)
@@ -12,13 +12,11 @@ script = ExtResource("1_aoxi6")
 playerNumber = "<null>"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(1.34766e-06, 0, 0.582304, 1)
 position = Vector2(8, 8)
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("2_iy6tn")
+texture = ExtResource("2_fshvp")
 
 [node name="Node2D" type="Node2D" parent="Sprite"]
-position = Vector2(64, 0)
+position = Vector2(8, 0)
 scale = Vector2(8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
