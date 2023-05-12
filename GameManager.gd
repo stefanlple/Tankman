@@ -3,6 +3,8 @@ extends Node
 @onready var endtext = get_node("EndText")
 @onready var endtextback =get_node("BackGroundText")
 
+var gameOver = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,15 +16,16 @@ func _unhandled_input(event):
 		Reload()
 	
 func GameEnd(Loser):
-	var Winner = "0"
-	
-	if (Loser == "1"):
-		Winner= "2"
-	else:
-		Winner= "1"
-	endtext.visible = true;
-	endtextback.visible = true;
-	endtext.set_text("Player " + Winner + " wins")
+	if(!gameOver):
+		var Winner = "0"
+		if (Loser == "1"):
+			Winner= "2"
+		else:
+			Winner= "1"
+		endtext.visible = true;
+		endtextback.visible = true;
+		endtext.set_text("Player " + Winner + " wins")
+		gameOver = true
 
 func Reload():
 	get_tree().reload_current_scene()

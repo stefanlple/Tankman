@@ -6,7 +6,7 @@ class_name Player
 @export var HP = 1;
 @export var texture:Texture2D;
 
-@export var MoveSpeed = 50;
+@export var MoveSpeed = 75;
 
 
 
@@ -17,7 +17,9 @@ var GRID_SIZE=16
 @onready var ShootingPoint = get_node("Sprite/Node2D")
 
 @onready var timer = get_node("Timer")
+@onready var timerBomb = get_node("BombTimer")
 var canShoot = true;
+var canBomb = true;
 
 var bullet = preload("res://Bullet.tscn")
 
@@ -52,14 +54,18 @@ func _unhandled_input(event):
 	if Input.is_action_pressed("Shoot_Player" +playerNumber): # PlaceBomb_Player1
 		if(canShoot):
 			fire()
+	
 	if Input.is_action_pressed("PlaceBomb_Player" +playerNumber): # PlaceBomb_Player1
-		if(BombCount > 0):
-			BombPlace()
+		if !Input.is_action_pressed("Shoot_Player" +playerNumber):
+			if(BombCount > 0 && canBomb):
+				BombCount = BombCount -1
+				BombPlace()
 
 
 func BombPlace():
 	var bomb_inst = bomb.instantiate()
 	bomb_inst.set_position(get_global_position())
+	bomb_inst.SetBombOwner(playerNumber)
 	get_tree().get_root().call_deferred("add_child",bomb_inst)
 
 func move(dir):
@@ -76,7 +82,7 @@ func _physics_process(delta):
 	get_input()
 	move_and_collide(velocity * delta)
 
-func  get_input():
+func get_input():
 	var stop = true;
 	for dir in inputs.keys():
 		if Input.is_action_pressed(dir):
@@ -115,3 +121,11 @@ func Death():
 	get_tree().get_root().get_node("Ingame").get_node("Manager").GameEnd(playerNumber)
 	queue_free() 
 
+
+func BlockBombplacement():
+	canBomb = false
+	timerBomb.start()
+
+
+func _on_bomb_timer_timeout():
+	canBomb = true

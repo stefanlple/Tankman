@@ -25,8 +25,10 @@ func _on_area_2d_area_entered(area):
 		if(!area.get_parent().MineButtlet(ownerOfBullet)):
 			area.get_parent().TakingHit()
 			queue_free() 
-	
 	if (area.get_parent() is Wall):
+		area.get_parent().GetHit()
+		queue_free();
+	if (area.get_parent() is Bomb):
 		area.get_parent().GetHit()
 		queue_free();
 	

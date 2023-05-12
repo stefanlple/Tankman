@@ -34,4 +34,8 @@ position = Vector2(-8, -8)
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_n661p")
 
+[node name="BombTimer" type="Timer" parent="."]
+wait_time = 0.75
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="BombTimer" to="." method="_on_bomb_timer_timeout"]
