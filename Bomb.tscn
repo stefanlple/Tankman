@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7p0wu0t0t4pp"]
 
 [ext_resource type="Texture2D" uid="uid://5n24vs6l4mlc" path="res://Assets/BomBPlacerHolder.png" id="1_bjxoe"]
-[ext_resource type="Script" path="res://Bomb.gd" id="1_hy27l"]
+[ext_resource type="Script" path="res://Bomb.gd" id="1_xsr4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b52jq"]
 size = Vector2(12, 12)
@@ -11,8 +11,7 @@ size = Vector2(12, 12)
 
 [node name="Bomb" type="StaticBody2D"]
 collision_layer = 2
-script = ExtResource("1_hy27l")
-trigger_PerDamage = true
+script = ExtResource("1_xsr4b")
 
 [node name="MainCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b52jq")
