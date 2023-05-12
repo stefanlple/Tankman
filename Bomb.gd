@@ -51,4 +51,6 @@ func _unhandled_input(event):
 			if Input.is_action_pressed("PlaceBomb_Player" +BombOwner): 
 				get_tree().get_root().get_node("Ingame").get_node("Player" + BombOwner).BlockBombplacement()
 				Boom()
+		if Input.is_action_pressed("RemoteExp" +BombOwner):
+			Boom()
 	
