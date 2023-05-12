@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7p0wu0t0t4pp"]
+
+[ext_resource type="Texture2D" uid="uid://5n24vs6l4mlc" path="res://Assets/BomBPlacerHolder.png" id="1_bjxoe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b52jq"]
+size = Vector2(12, 12)
+
+[node name="Bomb" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8.9407e-08, 5.96047e-08)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_bjxoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b52jq")

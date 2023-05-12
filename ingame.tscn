@@ -56,12 +56,12 @@ anchor_mode = 0
 zoom = Vector2(1.665, 1.665)
 
 [node name="Player1" parent="." instance=ExtResource("2_53gs3")]
-position = Vector2(16, 16)
+position = Vector2(25, 24)
 playerNumber = "1"
 texture = ExtResource("4_eolti")
 
 [node name="Player2" parent="." instance=ExtResource("2_53gs3")]
-position = Vector2(369, 368)
+position = Vector2(377, 376)
 playerNumber = "2"
 texture = ExtResource("5_yln87")
 

@@ -6,6 +6,10 @@ class_name Player
 @export var HP = 1;
 @export var texture:Texture2D;
 
+@export var MoveSpeed = 50;
+
+
+
 var GRID_SIZE=16
 @onready var ray= $RayCast2D
 @onready var sprite = get_node("Sprite")
@@ -17,9 +21,14 @@ var canShoot = true;
 
 var bullet = preload("res://Bullet.tscn")
 
+var bomb = preload("res://Bomb.tscn")
+@export var BombCount = 2;
+
 var bullet_speed = 640;
 var inputs;
 var rotate;
+
+
 
 var lastdir = Vector2.RIGHT;
 
@@ -36,15 +45,22 @@ func _ready():
 	sprite.set_texture(texture);
 
 func _unhandled_input(event):
-	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
-			
-			move(dir)
+	#for dir in inputs.keys():
+		#if event.is_action_pressed(dir):
+			#move(dir)
 	
-	if Input.is_action_pressed("Shoot_Player" +playerNumber):
+	if Input.is_action_pressed("Shoot_Player" +playerNumber): # PlaceBomb_Player1
 		if(canShoot):
 			fire()
+	if Input.is_action_pressed("PlaceBomb_Player" +playerNumber): # PlaceBomb_Player1
+		if(BombCount > 0):
+			BombPlace()
 
+
+func BombPlace():
+	var bomb_inst = bomb.instantiate()
+	bomb_inst.set_position(get_global_position())
+	get_tree().get_root().call_deferred("add_child",bomb_inst)
 
 func move(dir):
 	var vector_pos=inputs[dir] * GRID_SIZE
@@ -55,12 +71,23 @@ func move(dir):
 	if !ray.is_colliding():
 		position+= vector_pos
 
-func _fixed_process(delta):
-	var collision := move_and_collide((Vector2(0,0) * delta))
-	if collision != null:
-		var body = collision.collider;
-		print("Collided with: ", body.name);
+		
+func _physics_process(delta):
+	get_input()
+	move_and_collide(velocity * delta)
 
+func  get_input():
+	var stop = true;
+	for dir in inputs.keys():
+		if Input.is_action_pressed(dir):
+			lastdir = inputs[dir]
+			velocity = lastdir*MoveSpeed
+			var vector_pos=inputs[dir] * GRID_SIZE
+			sprite.look_at(sprite.global_position + vector_pos)
+			stop = false
+			
+	if(stop):
+		velocity = Vector2.ZERO;
 
 func fire():
 	canShoot = false

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://budglk2ynqbxw" path="res://Assets/tiles/blue tank.png" id="2_fshvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n661p"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -12,7 +12,6 @@ script = ExtResource("1_aoxi6")
 playerNumber = "<null>"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(8, 8)
 texture = ExtResource("2_fshvp")
 
 [node name="Node2D" type="Node2D" parent="Sprite"]
@@ -20,17 +19,16 @@ position = Vector2(8, 0)
 scale = Vector2(8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_n661p")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(8, 8)
 target_position = Vector2(2.08165e-12, 16)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="HitCheck" type="Area2D" parent="."]
+position = Vector2(-8, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitCheck"]
 position = Vector2(8, 8)
