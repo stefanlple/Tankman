@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb83kugbm3u5e"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_aoxi6"]
-[ext_resource type="Texture2D" uid="uid://budglk2ynqbxw" path="res://Assets/tiles/blue tank.png" id="2_fshvp"]
+[ext_resource type="Texture2D" uid="uid://bmngchvjksnaa" path="res://Assets/tiles/tank blue.png" id="2_relfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n661p"]
 size = Vector2(14, 14)
@@ -12,9 +12,12 @@ script = ExtResource("1_aoxi6")
 playerNumber = "<null>"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_fshvp")
+texture_filter = 1
+rotation = 3.14159
+texture = ExtResource("2_relfa")
 
 [node name="Node2D" type="Node2D" parent="Sprite"]
+texture_filter = 1
 position = Vector2(8, 0)
 scale = Vector2(8, 8)
 
