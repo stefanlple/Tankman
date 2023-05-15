@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://w8lpttcsvvs5"]
+[gd_scene load_steps=12 format=3 uid="uid://w8lpttcsvvs5"]
 
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="1_8otdx"]
 [ext_resource type="PackedScene" uid="uid://bb83kugbm3u5e" path="res://Player/player.tscn" id="2_53gs3"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://budglk2ynqbxw" path="res://Assets/tiles/blue tank.png" id="4_eolti"]
 [ext_resource type="Texture2D" uid="uid://bxfap4hyugjiu" path="res://Assets/DesWall.png" id="5_mshe4"]
 [ext_resource type="Texture2D" uid="uid://b86aafnjre6aj" path="res://Assets/tiles/green tank.png" id="5_yln87"]
-[ext_resource type="Script" path="res://GameManager.gd" id="6_imgcf"]
+[ext_resource type="PackedScene" uid="uid://3vhoaog18g5b" path="res://manager.tscn" id="8_k4vh8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74vk6"]
 texture = ExtResource("1_8otdx")
@@ -35,12 +35,6 @@ texture = ExtResource("2_qh32p")
 [sub_resource type="TileSet" id="TileSet_f2slv"]
 sources/1 = SubResource("TileSetAtlasSource_74vk6")
 sources/2 = SubResource("TileSetAtlasSource_lf560")
-
-[sub_resource type="LabelSettings" id="LabelSettings_giuxl"]
-line_spacing = 10.0
-font_size = 25
-outline_size = 1
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Ingame" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
@@ -715,29 +709,4 @@ position = Vector2(192, 192)
 [node name="OuterWall" parent="InnerWalls/InnerUnDestWall" instance=ExtResource("4_70o3b")]
 position = Vector2(176, 192)
 
-[node name="Manager" type="Node" parent="."]
-script = ExtResource("6_imgcf")
-
-[node name="Timer" type="Timer" parent="Manager"]
-wait_time = 1.5
-
-[node name="BackGroundText" type="Sprite2D" parent="Manager"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(200, 205)
-scale = Vector2(19.625, 5.25)
-texture = ExtResource("1_8otdx")
-
-[node name="EndText" type="Label" parent="Manager"]
-visible = false
-offset_left = -18.0
-offset_top = -17.0
-offset_right = 416.0
-offset_bottom = 414.0
-text = "win"
-label_settings = SubResource("LabelSettings_giuxl")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
+[node name="Manager" parent="." instance=ExtResource("8_k4vh8")]

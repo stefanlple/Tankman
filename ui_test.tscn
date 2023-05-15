@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://drorva1mfkpfr"]
+[gd_scene load_steps=7 format=3 uid="uid://drorva1mfkpfr"]
 
 [ext_resource type="Texture2D" uid="uid://bl078yk5krahh" path="res://Assets/background.png" id="1_qv111"]
 [ext_resource type="TileSet" uid="uid://bv668s6brku1x" path="res://Assets/tiles/tilemap.tres" id="2_07sjb"]
 [ext_resource type="Texture2D" uid="uid://bucitm4c6yit8" path="res://Assets/tiles/tank red.png" id="3_33lll"]
 [ext_resource type="PackedScene" uid="uid://bb83kugbm3u5e" path="res://Player/player.tscn" id="3_te1oj"]
 [ext_resource type="Texture2D" uid="uid://bmngchvjksnaa" path="res://Assets/tiles/tank blue.png" id="4_ewq5x"]
+[ext_resource type="PackedScene" uid="uid://3vhoaog18g5b" path="res://manager.tscn" id="6_ny3pc"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Ingame" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -30,3 +31,5 @@ position = Vector2(561, 271)
 platform_wall_layers = 1
 playerNumber = "2"
 texture = ExtResource("3_33lll")
+
+[node name="Manager" parent="." instance=ExtResource("6_ny3pc")]
