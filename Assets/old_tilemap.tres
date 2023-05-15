@@ -1,0 +1,31 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://buutpt8irq1ke"]
+
+[ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="1_h0qe3"]
+[ext_resource type="Texture2D" uid="uid://irhbh24ewas" path="res://Assets/WallSet.png" id="2_76uv3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74vk6"]
+texture = ExtResource("1_h0qe3")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lf560"]
+texture = ExtResource("2_76uv3")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[resource]
+sources/1 = SubResource("TileSetAtlasSource_74vk6")
+sources/2 = SubResource("TileSetAtlasSource_lf560")
