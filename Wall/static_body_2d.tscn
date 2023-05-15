@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://24n716bgdjaq"]
+[gd_scene load_steps=5 format=3 uid="uid://24n716bgdjaq"]
 
 [ext_resource type="Script" path="res://Wall/Wall.gd" id="1_8qrwj"]
+[ext_resource type="Texture2D" uid="uid://cxvldrv3icbw0" path="res://Assets/StoneWall.png" id="2_b2qm0"]
 [ext_resource type="Texture2D" uid="uid://b6d8tekvoocig" path="res://Assets/tiles/wall center.png" id="2_f75cp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74rrc"]
@@ -9,6 +10,7 @@ size = Vector2(16, 16)
 [node name="StaticBody2D" type="StaticBody2D"]
 position = Vector2(-16, -16)
 script = ExtResource("1_8qrwj")
+NewSprite = ExtResource("2_b2qm0")
 
 [node name="Area2D" type="Area2D" parent="."]
 

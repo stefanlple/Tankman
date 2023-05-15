@@ -2,7 +2,7 @@ extends StaticBody2D
 class_name Wall
 
 
-@export var indestructible = true;
+@export var indestructible = false;
 @export var hp = 1;
 
 @onready var sprite = get_node("WallTexture")
