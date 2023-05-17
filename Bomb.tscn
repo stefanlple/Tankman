@@ -12,6 +12,7 @@ size = Vector2(12, 12)
 [node name="Bomb" type="StaticBody2D"]
 collision_layer = 2
 script = ExtResource("1_xsr4b")
+trigger_PerDamage = true
 
 [node name="MainCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b52jq")

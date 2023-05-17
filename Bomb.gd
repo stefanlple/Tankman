@@ -22,7 +22,7 @@ func _on_timer_timeout():
 		Boom();
 
 func Boom():
-	print("fwe")
+	#print("fwe")
 	var boom_inst = explosion.instantiate()
 	boom_inst.ToCenter()
 	boom_inst.set_position(get_global_position())
@@ -34,7 +34,7 @@ func Boom():
 func _on_area_2d_area_exited(area):
 	if (area.get_parent() is Player):
 		set_collision_layer_value( 1, true )
-		print("Out")
+		#print("Out")
 		
 
 func GetHit():

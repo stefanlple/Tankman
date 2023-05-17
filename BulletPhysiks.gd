@@ -19,7 +19,7 @@ func SetOwner(NewOwner):
 	ownerOfBullet = NewOwner;
 
 func _on_area_2d_area_entered(area):
-	print(area.get_parent())
+	#print(area.get_parent())
 	
 	if (area.get_parent() is Player):
 		if(!area.get_parent().MineButtlet(ownerOfBullet)):

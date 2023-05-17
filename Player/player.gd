@@ -118,7 +118,7 @@ func TakingHit():
 		Death()
 		
 func Death():
-	get_tree().get_root().get_node("Ingame").get_node("Manager").GameEnd(playerNumber)
+	get_node("/root/GameManger").RoundEnd(playerNumber)
 	queue_free() 
 
 

@@ -1,0 +1,132 @@
+[gd_scene load_steps=9 format=3 uid="uid://bv6cqi5cgan6r"]
+
+[ext_resource type="Script" path="res://RoundEndText.gd" id="1_ci8yw"]
+[ext_resource type="Texture2D" uid="uid://bmngchvjksnaa" path="res://Assets/tiles/tank blue.png" id="1_cjnj4"]
+[ext_resource type="Texture2D" uid="uid://bucitm4c6yit8" path="res://Assets/tiles/tank red.png" id="2_cigp3"]
+[ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="3_7l011"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6mvbw"]
+line_spacing = 10.0
+font_size = 25
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0rsnl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RoundText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_61fn2"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RoundText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jl8af"]
+_data = {
+"RESET": SubResource("Animation_0rsnl"),
+"transition": SubResource("Animation_61fn2")
+}
+
+[node name="RoundText" type="Label"]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+offset_left = -18.0
+offset_top = -16.0
+offset_right = 416.0
+offset_bottom = 415.0
+text = "Round 1
+
+"
+label_settings = SubResource("LabelSettings_6mvbw")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+script = ExtResource("1_ci8yw")
+
+[node name="Player1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(152, 246)
+scale = Vector2(2, 1.5)
+texture = ExtResource("1_cjnj4")
+
+[node name="Player1Label" type="Label" parent="Player1"]
+texture_filter = 1
+offset_left = 14.0
+offset_top = -12.0
+offset_right = 24.0
+offset_bottom = 14.0
+scale = Vector2(1.1, 1)
+text = "0"
+
+[node name="Player2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(271, 245)
+rotation = -3.14159
+scale = Vector2(2, 1.5)
+texture = ExtResource("2_cigp3")
+
+[node name="Player2Label" type="Label" parent="Player2"]
+texture_filter = 1
+offset_left = 23.5003
+offset_top = 11.3328
+offset_right = 33.5003
+offset_bottom = 37.3328
+rotation = -3.14253
+text = "0"
+
+[node name="BackGroundText" type="Sprite2D" parent="."]
+modulate = Color(0.12549, 0.12549, 0.12549, 1)
+show_behind_parent = true
+position = Vector2(220.5, 216)
+scale = Vector2(25.3125, 25)
+texture = ExtResource("3_7l011")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 192.0
+offset_top = 233.0
+offset_right = 232.0
+offset_bottom = 259.0
+text = "----"
+horizontal_alignment = 1
+
+[node name="ToNext" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 131.0
+offset_top = 259.0
+offset_right = 288.0
+offset_bottom = 285.0
+text = "Press Esp to Restart "
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.021
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_jl8af")
+}

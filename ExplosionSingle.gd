@@ -60,11 +60,14 @@ func CauseExplosion(Path):
 func _on_area_entered(area):
 	#print("Hit with Exp" + area.get_parent())
 	if (area.get_parent() is Player):
-			area.get_parent().TakingHit()
+		area.get_parent().TakingHit()
+		if(!center):
 			queue_free() 
 	if (area.get_parent() is Wall):
 		area.get_parent().GetHit()
-		queue_free();
+		if(!center):
+				queue_free() 
 	if (area.get_parent() is Bomb):
 		area.get_parent().GetHit()
-		queue_free();
+		if(!center):
+			queue_free() 

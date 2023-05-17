@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb83kugbm3u5e"]
+[gd_scene load_steps=5 format=3 uid="uid://bb83kugbm3u5e"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_aoxi6"]
 [ext_resource type="Texture2D" uid="uid://bmngchvjksnaa" path="res://Assets/tiles/tank blue.png" id="2_relfa"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2gubl"]
+radius = 6.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n661p"]
-size = Vector2(14, 14)
+size = Vector2(12, 12)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -13,6 +16,7 @@ playerNumber = "<null>"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-2.08165e-12, -2.08165e-12)
 rotation = 3.14159
 texture = ExtResource("2_relfa")
 
@@ -22,7 +26,9 @@ position = Vector2(8, 0)
 scale = Vector2(8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_n661p")
+position = Vector2(2, -2.08189e-12)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_2gubl")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(2.08165e-12, 16)
@@ -31,10 +37,10 @@ target_position = Vector2(2.08165e-12, 16)
 wait_time = 0.5
 
 [node name="HitCheck" type="Area2D" parent="."]
-position = Vector2(-8, -8)
+position = Vector2(-7, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitCheck"]
-position = Vector2(8, 8)
+position = Vector2(9, 8)
 shape = SubResource("RectangleShape2D_n661p")
 
 [node name="BombTimer" type="Timer" parent="."]

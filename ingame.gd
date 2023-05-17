@@ -15,7 +15,7 @@ func generateMap():
 		for y in range(mapSize):
 			row.append(0)
 		mapArray.append(row)
-		print(mapArray)
+		#print(mapArray)
 
 func generateBlocks():
 	for x in range(mapSize):

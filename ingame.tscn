@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://24n716bgdjaq" path="res://Wall/static_body_2d.tscn" id="4_70o3b"]
 [ext_resource type="Texture2D" uid="uid://budglk2ynqbxw" path="res://Assets/tiles/blue tank.png" id="4_eolti"]
 [ext_resource type="Texture2D" uid="uid://b86aafnjre6aj" path="res://Assets/tiles/green tank.png" id="5_yln87"]
-[ext_resource type="PackedScene" uid="uid://3vhoaog18g5b" path="res://manager.tscn" id="8_k4vh8"]
 [ext_resource type="Texture2D" uid="uid://bxfap4hyugjiu" path="res://Assets/DesWall.png" id="8_kyqil"]
+[ext_resource type="PackedScene" uid="uid://bv6cqi5cgan6r" path="res://Assets/round_textMang.tscn" id="9_cpll1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74vk6"]
 texture = ExtResource("1_8otdx")
@@ -586,4 +586,12 @@ NewSprite = ExtResource("8_kyqil")
 
 [node name="InnerUnDestWall" type="Node" parent="InnerWalls"]
 
-[node name="Manager" parent="." instance=ExtResource("8_k4vh8")]
+[node name="RoundText" parent="." instance=ExtResource("9_cpll1")]
+visible = false
+self_modulate = Color(1, 1, 1, 1)
+top_level = true
+offset_left = -35.0
+offset_top = -33.0
+offset_right = 400.0
+offset_bottom = 398.0
+scale = Vector2(1.06791, 1.07498)
