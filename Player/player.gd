@@ -129,3 +129,12 @@ func BlockBombplacement():
 
 func _on_bomb_timer_timeout():
 	canBomb = true
+
+func activateBuff():
+	print("Buff activated")
+
+func _on_area_2d_area_entered(area):
+	var parent = area.get_parent();
+	if (parent is Buff):
+		parent.getHit()
+		activateBuff()

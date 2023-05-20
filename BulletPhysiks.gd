@@ -20,6 +20,8 @@ func SetOwner(NewOwner):
 
 func _on_area_2d_area_entered(area):
 	#print(area.get_parent())
+
+	var parent = area.get_parent();
 	
 	if (area.get_parent() is Player):
 		if(!area.get_parent().MineButtlet(ownerOfBullet)):
@@ -31,5 +33,6 @@ func _on_area_2d_area_entered(area):
 	if (area.get_parent() is Bomb):
 		area.get_parent().GetHit()
 		queue_free();
-	
-
+	if (parent is Buff):
+		parent.getHit(ownerOfBullet)
+		queue_free();

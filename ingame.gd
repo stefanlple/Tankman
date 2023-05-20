@@ -3,6 +3,8 @@ extends Node2D
 var mapSize = 25
 var tileSize = 16
 var mapArray = []
+@export var wallProbability = 0.3
+@export var buffProbability = 0.005
 
 func _ready():
 	generateMap()
@@ -22,12 +24,18 @@ func generateBlocks():
 		for y in range(mapSize):
 			if (x==0 and y==0) or  (x == mapSize - 1 and y ==mapSize - 1):
 				continue
-			if randf() < 0.3:  # Adjust the probability based on your needs
+			var randVal = randf();
+			if randVal < buffProbability:
 				mapArray[x][y] = 1
-				createBlock(x, y)
+				createBlock("buff", x, y)
+			elif randVal < wallProbability:  # Adjust the probability based on your needs
+				mapArray[x][y] = 1
+				createBlock("wall", x, y)
 
-func createBlock(x, y):
+func createBlock(type, x, y):
 	var blockInstance = preload("res://Wall/static_body_2d.tscn").instantiate()
+	if type == "buff":
+		blockInstance = preload("res://Buff/buff.tscn").instantiate()
 	var block = blockInstance as Node2D
 	block.position = Vector2(x * tileSize, y * tileSize)
 	add_child(block)
