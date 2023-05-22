@@ -38,4 +38,4 @@ func createBlock(type, x, y):
 		blockInstance = preload("res://Buff/buff.tscn").instantiate()
 	var block = blockInstance as Node2D
 	block.position = Vector2(x * tileSize, y * tileSize)
-	add_child(block)
+	add_child(block) 
