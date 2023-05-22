@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb83kugbm3u5e"]
+[gd_scene load_steps=5 format=3 uid="uid://bb83kugbm3u5e"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_aoxi6"]
 [ext_resource type="Texture2D" uid="uid://bmngchvjksnaa" path="res://Assets/tiles/tank blue.png" id="2_relfa"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_16pax"]
-size = Vector2(12, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gubl"]
 radius = 6.0
@@ -28,15 +25,6 @@ texture_filter = 1
 position = Vector2(8, 0)
 scale = Vector2(8, 8)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(2, -2.08189e-12)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2.38419e-07, -2.38419e-07)
-shape = SubResource("RectangleShape2D_16pax")
-debug_color = Color(0, 0.6, 0.701961, 0)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2.08189e-12)
 rotation = 1.5708
@@ -58,5 +46,10 @@ shape = SubResource("RectangleShape2D_n661p")
 [node name="BombTimer" type="Timer" parent="."]
 wait_time = 0.75
 
+[node name="BuffTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="HitCheck" to="." method="_on_hit_check_area_entered"]
 [connection signal="timeout" from="BombTimer" to="." method="_on_bomb_timer_timeout"]
+[connection signal="timeout" from="BuffTimer" to="." method="_on_buff_timer_timeout"]

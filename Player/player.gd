@@ -5,34 +5,25 @@ class_name Player
 #@export var SpriteColor = Color(255, 0, 0, 1);
 @export var HP = 1;
 @export var texture:Texture2D;
-
 @export var MoveSpeed = 75;
-
-
-
-var GRID_SIZE=16
-@onready var ray= $RayCast2D
-@onready var sprite = get_node("Sprite")
-
-@onready var ShootingPoint = get_node("Sprite/Node2D")
-
-@onready var timer = get_node("Timer")
-@onready var timerBomb = get_node("BombTimer")
-var canShoot = true;
-var canBomb = true;
-
-var bullet = preload("res://Bullet.tscn")
-
-var bomb = preload("res://Bomb.tscn")
 @export var BombCount = 2;
 
+@onready var ray= $RayCast2D
+@onready var sprite = get_node("Sprite")
+@onready var ShootingPoint = get_node("Sprite/Node2D")
+@onready var timer = get_node("Timer")
+@onready var timerBomb = get_node("BombTimer")
+@onready var timerBuff = get_node("BuffTimer")
+
+var canShoot = true;
+var canBomb = true;
+var bullet = preload("res://Bullet.tscn")
+var bomb = preload("res://Bomb.tscn")
 var bullet_speed = 640;
 var inputs;
 var rotate;
-
-
-
 var lastdir = Vector2.RIGHT;
+var GRID_SIZE=16
 
 
 func _ready():
@@ -45,6 +36,7 @@ func _ready():
 	rotate = inputs;
 	#sprite.modulate = SpriteColor;
 	sprite.set_texture(texture);
+
 
 func _unhandled_input(event):
 	#for dir in inputs.keys():
@@ -68,6 +60,7 @@ func BombPlace():
 	bomb_inst.SetBombOwner(playerNumber)
 	get_tree().get_root().call_deferred("add_child",bomb_inst)
 
+
 func move(dir):
 	var vector_pos=inputs[dir] * GRID_SIZE
 	lastdir = inputs[dir]
@@ -82,6 +75,7 @@ func _physics_process(delta):
 	get_input()
 	move_and_collide(velocity * delta)
 
+
 func get_input():
 	var stop = true;
 	for dir in inputs.keys():
@@ -94,6 +88,7 @@ func get_input():
 			
 	if(stop):
 		velocity = Vector2.ZERO;
+
 
 func fire():
 	canShoot = false
@@ -109,14 +104,17 @@ func fire():
 func MineButtlet(pNumber):
 	return (playerNumber == pNumber)
 
+
 func _on_timer_timeout():
 	canShoot = true;
+
 
 func TakingHit():
 	HP = HP-1;
 	if(HP <= 0):
 		Death()
-		
+
+
 func Death():
 	get_node("/root/GameManger").RoundEnd(playerNumber)
 	queue_free() 
@@ -130,11 +128,19 @@ func BlockBombplacement():
 func _on_bomb_timer_timeout():
 	canBomb = true
 
+
 func activateBuff():
 	print("Buff activated")
+	timerBuff.start()
+	MoveSpeed = MoveSpeed * 2
 
-func _on_area_2d_area_entered(area):
+
+func _on_hit_check_area_entered(area:Area2D):
 	var parent = area.get_parent();
 	if (parent is Buff):
-		parent.getHit()
+		parent.queue_free()
 		activateBuff()
+
+
+func _on_buff_timer_timeout():
+	MoveSpeed = MoveSpeed / 2
