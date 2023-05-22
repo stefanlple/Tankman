@@ -7,6 +7,8 @@ class_name Player
 @export var texture: Texture2D
 @export var MoveSpeed = 75
 @export var BombCount = 2
+@export var fireRate = 0.5
+@export var buffFireRate = 0.1
 
 @onready var ray = $RayCast2D
 @onready var sprite = get_node("Sprite")
@@ -36,6 +38,7 @@ func _ready():
 	rotate = inputs
 	#sprite.modulate = SpriteColor;
 	sprite.set_texture(texture)
+	timer.set_wait_time( fireRate )
 
 
 func _unhandled_input(event):
@@ -132,7 +135,7 @@ func _on_bomb_timer_timeout():
 func activateBuff():
 	print("Buff activated")
 	timerBuff.start()
-	MoveSpeed = MoveSpeed * 2
+	timer.set_wait_time( buffFireRate )
 
 
 func _on_hit_check_area_entered(area: Area2D):
@@ -143,4 +146,4 @@ func _on_hit_check_area_entered(area: Area2D):
 
 
 func _on_buff_timer_timeout():
-	MoveSpeed = MoveSpeed / 2
+	timer.set_wait_time( fireRate )
