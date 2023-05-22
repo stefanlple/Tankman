@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Wall/Wall.gd" id="1_8qrwj"]
 [ext_resource type="Texture2D" uid="uid://cxvldrv3icbw0" path="res://Assets/StoneWall.png" id="2_b2qm0"]
-[ext_resource type="Texture2D" uid="uid://b6d8tekvoocig" path="res://Assets/tiles/wall center.png" id="2_f75cp"]
+[ext_resource type="Texture2D" uid="uid://dnden1si06sd4" path="res://Assets/tiles/wall center.png" id="2_f75cp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74rrc"]
 size = Vector2(16, 16)
