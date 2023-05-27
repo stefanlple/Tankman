@@ -7,7 +7,6 @@
 size = Vector2(16, 16.5)
 
 [node name="BulletTest2" type="RigidBody2D"]
-position = Vector2(73, 25)
 mass = 0.01
 gravity_scale = 0.0
 max_contacts_reported = 10

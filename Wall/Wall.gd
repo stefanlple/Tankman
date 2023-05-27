@@ -19,7 +19,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func GetHit():
 	if (!indestructible):
 		hp = hp -1
