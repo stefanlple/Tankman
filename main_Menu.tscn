@@ -65,6 +65,7 @@ text = "Control"
 
 [node name="p1" type="Label" parent="Controls"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -196.0
 offset_top = -7.0
 offset_right = -138.0
@@ -84,6 +85,7 @@ d - RIGHT
 a - LEFT"
 
 [node name="Label2" type="Label" parent="Controls/p1"]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 25.0
 offset_right = 184.0
@@ -95,6 +97,7 @@ r - TRIGGER BOMB"
 
 [node name="p2" type="Label" parent="Controls"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 151.0
 offset_top = -3.0
 offset_right = 209.0
@@ -114,6 +117,7 @@ j - RIGHT
 l - LEFT"
 
 [node name="Label2" type="Label" parent="Controls/p2"]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 25.0
 offset_right = 184.0
