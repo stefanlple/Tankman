@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://w8lpttcsvvs5"]
+[gd_scene load_steps=14 format=3 uid="uid://w8lpttcsvvs5"]
 
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="1_8otdx"]
 [ext_resource type="Script" path="res://ingame.gd" id="1_hdvlo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b86aafnjre6aj" path="res://Assets/tiles/green tank.png" id="5_yln87"]
 [ext_resource type="Texture2D" uid="uid://bxfap4hyugjiu" path="res://Assets/DesWall.png" id="8_kyqil"]
 [ext_resource type="PackedScene" uid="uid://bv6cqi5cgan6r" path="res://Assets/round_textMang.tscn" id="9_cpll1"]
+[ext_resource type="PackedScene" uid="uid://br6flsigmwstm" path="res://bomb_stopper.tscn" id="10_jnko0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74vk6"]
 texture = ExtResource("1_8otdx")
@@ -64,6 +65,7 @@ playerNumber = "2"
 texture = ExtResource("5_yln87")
 
 [node name="Walls" type="Node2D" parent="."]
+z_index = 3
 
 [node name="OuterWall5" parent="Walls" instance=ExtResource("4_70o3b")]
 position = Vector2(32, -16)
@@ -597,3 +599,19 @@ offset_top = -33.0
 offset_right = 400.0
 offset_bottom = 398.0
 scale = Vector2(1.06791, 1.07498)
+
+[node name="BombStopper" type="Node" parent="."]
+
+[node name="BombStopper3" parent="BombStopper" instance=ExtResource("10_jnko0")]
+position = Vector2(426, 5)
+
+[node name="BombStopper" parent="BombStopper" instance=ExtResource("10_jnko0")]
+position = Vector2(0, 3)
+
+[node name="BombStopper2" parent="BombStopper" instance=ExtResource("10_jnko0")]
+position = Vector2(400, 426)
+rotation = 1.5708
+
+[node name="BombStopper4" parent="BombStopper" instance=ExtResource("10_jnko0")]
+position = Vector2(400, 0)
+rotation = 1.5708

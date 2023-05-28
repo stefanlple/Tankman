@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name Explosion
 
 var nextPath;
 var center = false
@@ -65,8 +65,8 @@ func _on_area_entered(area):
 			queue_free() 
 	if (area.get_parent() is Wall):
 		area.get_parent().GetHit()
-		if(!center):
-				queue_free() 
+		if(!(center || area.get_parent().GetInDestructable())):
+			queue_free() 
 	if (area.get_parent() is Bomb):
 		area.get_parent().GetHit()
 		if(!center):

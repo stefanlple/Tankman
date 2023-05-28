@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://br6flsigmwstm"]
+
+[ext_resource type="Script" path="res://ExplosionStopper.gd" id="1_hf1lc"]
+[ext_resource type="Script" path="res://bomb_stopper.gd" id="1_tiu62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfsfs"]
+size = Vector2(6, 432)
+
+[node name="BombStopper" type="Area2D"]
+script = ExtResource("1_tiu62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 200)
+shape = SubResource("RectangleShape2D_xfsfs")
+script = ExtResource("1_hf1lc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

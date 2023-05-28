@@ -25,3 +25,6 @@ func GetHit():
 		if (hp <= 0):
 			queue_free() 
 	
+
+func GetInDestructable():
+	return indestructible;
