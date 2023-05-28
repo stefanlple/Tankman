@@ -8,10 +8,13 @@ var over = false
 var timeToOver = 0.5;
 
 @onready var timer = get_node("Timer");
+@onready var SoundPlayer = get_node("BoomSound")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer.start()
+	if(center):
+		SoundPlayer.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

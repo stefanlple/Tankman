@@ -17,6 +17,8 @@ class_name Player
 @onready var timerBomb = get_node("BombTimer")
 @onready var timerBuff = get_node("BuffTimer")
 
+@onready var SoundPlayer = get_node("Shoot-Sound")
+
 var canShoot = true
 var canBomb = true
 var bullet = preload("res://Bullet.tscn")
@@ -94,6 +96,7 @@ func get_input():
 
 
 func fire():
+	SoundPlayer.play()
 	canShoot = false
 	timer.start()
 	var bullet_inst = bullet.instantiate()
@@ -102,7 +105,7 @@ func fire():
 	bullet_inst.set_rotation_degrees(ShootingPoint.get_global_rotation_degrees())
 	bullet_inst.apply_central_impulse(lastdir * bullet_speed)
 	get_tree().get_root().call_deferred("add_child", bullet_inst)
-
+	
 
 func MineButtlet(pNumber):
 	return playerNumber == pNumber
