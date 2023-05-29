@@ -54,4 +54,7 @@ func _unhandled_input(event):
 				Boom()
 		if Input.is_action_pressed("RemoteExp" +BombOwner):
 			Boom()
-	
+			
+			
+func Set_trigger_OnTime(setTO):
+	trigger_OnTime = setTO;

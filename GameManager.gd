@@ -15,6 +15,8 @@ var currentRound = 0;
 
 var round_over = false;
 
+@export var WithBombTimer = true;
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -86,3 +88,9 @@ func ToNextRound(Winner):
 	timer.start()
 	print("End")
 	get_tree().get_root().get_node("/root/Ingame/RoundText").ShowText("Round " + str(currentRound) ,str(winRat[0]),str(winRat[1]),Winner)
+	
+func SetBombMode(set):
+	WithBombTimer = set;
+
+func GetBombMode():
+	return WithBombTimer;

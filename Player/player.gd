@@ -7,13 +7,14 @@ class_name Player
 @export var texture: Texture2D
 @export var MoveSpeed = 75
 
+# Bomb Variables 
 @export var BombCount = 2
 @export var BombMAX = 2
 var BombregTime = 5;
 @export var BombregTimeMax = 5;
+var BombModeT = true;
 
 @export var fireRate = 0.5
-
 @export var buffFireRate = 0.1
 
 
@@ -49,7 +50,8 @@ func _ready():
 	sprite.set_texture(texture)
 	timer.set_wait_time( fireRate )
 	BombregTime = BombregTimeMax;
-
+	BombModeT = get_node("/root/GameManger").GetBombMode();
+	
 	
 
 func _unhandled_input(event):
@@ -72,6 +74,7 @@ func BombPlace():
 	var bomb_inst = bomb.instantiate()
 	bomb_inst.set_position(get_global_position())
 	bomb_inst.SetBombOwner(playerNumber)
+	bomb_inst.Set_trigger_OnTime(BombModeT)
 	get_tree().get_root().call_deferred("add_child", bomb_inst)
 
 
