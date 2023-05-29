@@ -6,15 +6,22 @@ class_name Player
 @export var HP = 1
 @export var texture: Texture2D
 @export var MoveSpeed = 75
+
 @export var BombCount = 2
+@export var BombMAX = 2
+var BombregTime = 5;
+@export var BombregTimeMax = 5;
+
 @export var fireRate = 0.5
+
 @export var buffFireRate = 0.1
+
 
 @onready var ray = $RayCast2D
 @onready var sprite = get_node("Sprite")
 @onready var ShootingPoint = get_node("Sprite/Node2D")
 @onready var timer = get_node("Timer")
-@onready var timerBomb = get_node("BombTimer")
+@onready var timerBomb = get_node("BombPlacementTimer")
 @onready var timerBuff = get_node("BuffTimer")
 
 @onready var SoundPlayer = get_node("Shoot-Sound")
@@ -41,7 +48,9 @@ func _ready():
 	#sprite.modulate = SpriteColor;
 	sprite.set_texture(texture)
 	timer.set_wait_time( fireRate )
+	BombregTime = BombregTimeMax;
 
+	
 
 func _unhandled_input(event):
 	#for dir in inputs.keys():
@@ -80,6 +89,24 @@ func _physics_process(delta):
 	get_input()
 	move_and_collide(velocity * delta)
 
+func _process(delta):
+	if(BombCount < BombMAX):
+		BombregTime -= delta;
+	if(BombregTime <0):
+		GetBombBack()
+
+func GetBombBack():
+	if(BombCount < BombMAX):
+		BombCount +=1 ;
+		BombregTime = BombregTimeMax;
+
+func GetBomRegTime():
+	return BombregTime;
+	
+func SetBombReg(newTime):
+	BombregTimeMax = newTime
+	if (BombregTime > BombregTimeMax):
+		BombregTime = BombregTimeMax;
 
 func get_input():
 	var stop = true

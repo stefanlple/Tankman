@@ -3,6 +3,7 @@ class_name Wall
 
 
 @export var indestructible = false;
+@export var outside = false;
 @export var hp = 1;
 
 @onready var sprite = get_node("WallTexture")
@@ -28,3 +29,6 @@ func GetHit():
 
 func GetInDestructable():
 	return indestructible;
+
+func GetOutside():
+	return outside;

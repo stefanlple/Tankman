@@ -68,7 +68,7 @@ func _on_area_entered(area):
 			queue_free() 
 	if (area.get_parent() is Wall):
 		area.get_parent().GetHit()
-		if(!(center || area.get_parent().GetInDestructable())):
+		if(!(center || area.get_parent().GetOutside())):
 			queue_free() 
 	if (area.get_parent() is Bomb):
 		area.get_parent().GetHit()
