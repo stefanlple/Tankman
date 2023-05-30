@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dl4inpefglvgb" path="res://Sounds/Boom.wav" id="3_x6oeh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmps2"]
-size = Vector2(14, 14)
+size = Vector2(12, 12)
 
 [node name="Explosion" type="Area2D"]
 script = ExtResource("1_251ry")
@@ -17,7 +17,8 @@ shape = SubResource("RectangleShape2D_vmps2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.879996, 0.879999)
+position = Vector2(-1.49012e-08, 0)
+scale = Vector2(0.8525, 0.865)
 texture = ExtResource("2_j1sec")
 
 [node name="Timer" type="Timer" parent="."]
