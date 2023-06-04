@@ -33,6 +33,8 @@ func _unhandled_input(event):
 			currentRound = 0;
 			round_over = false;
 			Reload()
+	if Input.is_action_pressed("ToMenu"):
+		get_tree().change_scene_to_file("res://main_Menu.tscn")
 	
 func RoundEnd(Loser):
 	if(!round_over):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7p0wu0t0t4pp"]
+[gd_scene load_steps=9 format=3 uid="uid://b7p0wu0t0t4pp"]
 
 [ext_resource type="Script" path="res://Bomb.gd" id="1_xsr4b"]
 [ext_resource type="Texture2D" uid="uid://b4ffnch11tu75" path="res://Assets/tiles/bomb.png" id="2_t71rr"]
@@ -8,6 +8,85 @@ size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvxrj"]
 size = Vector2(12, 12)
+
+[sub_resource type="Animation" id="Animation_0kdbv"]
+resource_name = "Bomb_onTimer"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.8, 0.8), Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ulvut"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.75, 0.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_plo3s"]
+resource_name = "Bomb_onTriggerM"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jtps2"]
+_data = {
+"Bomb_onTimer": SubResource("Animation_0kdbv"),
+"Bomb_onTriggerM": SubResource("Animation_plo3s"),
+"RESET": SubResource("Animation_ulvut")
+}
 
 [node name="Bomb" type="StaticBody2D"]
 collision_layer = 2
@@ -30,6 +109,11 @@ wait_time = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_fvxrj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jtps2")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

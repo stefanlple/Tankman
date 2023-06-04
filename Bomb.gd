@@ -11,7 +11,10 @@ var explosion = preload("res://Explosion.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Timer").start()
-
+	if (trigger_OnTime):
+		get_node("AnimationPlayer").play("Bomb_onTimer");
+	elif(trigger_PerRemote):
+		get_node("AnimationPlayer").play("Bomb_onTriggerM")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
