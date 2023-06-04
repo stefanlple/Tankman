@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b7p0wu0t0t4pp"]
 
-[ext_resource type="Script" path="res://Bomb.gd" id="1_xsr4b"]
+[ext_resource type="Script" path="res://Bomb.gd" id="1_u1hms"]
 [ext_resource type="Texture2D" uid="uid://b4ffnch11tu75" path="res://Assets/tiles/bomb.png" id="2_t71rr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b52jq"]
@@ -38,6 +38,22 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_plo3s"]
+resource_name = "Bomb_onTriggerM"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ulvut"]
 length = 0.001
 tracks/0/type = "value"
@@ -65,22 +81,6 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_plo3s"]
-resource_name = "Bomb_onTriggerM"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.5, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 1, 1), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jtps2"]
 _data = {
 "Bomb_onTimer": SubResource("Animation_0kdbv"),
@@ -90,7 +90,7 @@ _data = {
 
 [node name="Bomb" type="StaticBody2D"]
 collision_layer = 2
-script = ExtResource("1_xsr4b")
+script = ExtResource("1_u1hms")
 trigger_PerDamage = true
 
 [node name="MainCollider" type="CollisionShape2D" parent="."]

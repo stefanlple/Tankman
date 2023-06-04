@@ -34,6 +34,10 @@ func _unhandled_input(event):
 			round_over = false;
 			Reload()
 	if Input.is_action_pressed("ToMenu"):
+		winRat = [0,0];
+		gameOver = false
+		currentRound = 0;
+		round_over = false;
 		get_tree().change_scene_to_file("res://main_Menu.tscn")
 	
 func RoundEnd(Loser):
