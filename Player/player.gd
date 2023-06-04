@@ -106,6 +106,9 @@ func GetBombBack():
 func GetBomRegTime():
 	return BombregTime;
 	
+func GetBombCount():
+	return BombCount;
+	
 func SetBombReg(newTime):
 	BombregTimeMax = newTime
 	if (BombregTime > BombregTimeMax):
