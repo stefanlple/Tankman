@@ -95,11 +95,11 @@ func _physics_process(delta):
 func _process(delta):
 	if(BombCount < BombMAX):
 		BombregTime -= delta;
-	if(BombregTime <0):
+	if(BombregTime < 0):
 		GetBombBack()
 
 func GetBombBack():
-	if(BombCount < BombMAX):
+	if(BombCount != BombMAX):
 		BombCount +=1 ;
 		BombregTime = BombregTimeMax;
 
