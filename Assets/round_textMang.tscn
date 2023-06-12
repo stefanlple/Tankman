@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bv6cqi5cgan6r"]
 
 [ext_resource type="Script" path="res://RoundEndText.gd" id="1_ci8yw"]
-[ext_resource type="Texture2D" uid="uid://bmngchvjksnaa" path="res://Assets/tiles/tank blue.png" id="1_cjnj4"]
-[ext_resource type="Texture2D" uid="uid://bucitm4c6yit8" path="res://Assets/tiles/tank red.png" id="2_cigp3"]
+[ext_resource type="Texture2D" uid="uid://budglk2ynqbxw" path="res://Assets/tiles/blue tank.png" id="2_ky26m"]
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="3_7l011"]
+[ext_resource type="Texture2D" uid="uid://bh6ieslbiqc0r" path="res://Assets/tiles/Green-Tank.png" id="3_y5gyc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6mvbw"]
 line_spacing = 10.0
@@ -67,8 +67,8 @@ script = ExtResource("1_ci8yw")
 [node name="Player1" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(152, 246)
-scale = Vector2(2, 1.5)
-texture = ExtResource("1_cjnj4")
+scale = Vector2(2, 2)
+texture = ExtResource("2_ky26m")
 
 [node name="Player1Label" type="Label" parent="Player1"]
 texture_filter = 1
@@ -83,8 +83,8 @@ text = "0"
 texture_filter = 1
 position = Vector2(271, 245)
 rotation = -3.14159
-scale = Vector2(2, 1.5)
-texture = ExtResource("2_cigp3")
+scale = Vector2(2, 2)
+texture = ExtResource("3_y5gyc")
 
 [node name="Player2Label" type="Label" parent="Player2"]
 texture_filter = 1
