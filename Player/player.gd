@@ -5,7 +5,6 @@ class_name Player
 #@export var SpriteColor = Color(255, 0, 0, 1);
 @export var HP = 1
 @export var texture: Texture2D
-@export var MoveSpeed = 75
 
 # Bomb Variables 
 @export var BombCount = 2
@@ -14,16 +13,20 @@ var BombregTime = 5;
 @export var BombregTimeMax = 5;
 var BombModeT = true;
 
+# Bulff Variables
 @export var fireRate = 0.5
 @export var buffFireRate = 0.1
+@export var normalMoveSpeed = 75
+@export var buffMoveSpeed = 200
 
 
 @onready var ray = $RayCast2D
 @onready var sprite = get_node("Sprite")
 @onready var ShootingPoint = get_node("Sprite/Node2D")
-@onready var timer = get_node("Timer")
+@onready var fireRateTimer = get_node("FireRateTimer")
 @onready var timerBomb = get_node("BombPlacementTimer")
 @onready var timerBuff = get_node("BuffTimer")
+@onready var MoveSpeed = normalMoveSpeed
 
 @onready var SoundPlayer = get_node("Shoot-Sound")
 
@@ -48,7 +51,7 @@ func _ready():
 	rotate = inputs
 	#sprite.modulate = SpriteColor;
 	sprite.set_texture(texture)
-	timer.set_wait_time( fireRate )
+	fireRateTimer.set_wait_time( fireRate )
 	BombregTime = BombregTimeMax;
 	BombModeT = get_node("/root/GameManger").GetBombMode();
 	
@@ -131,7 +134,7 @@ func get_input():
 func fire():
 	SoundPlayer.play()
 	canShoot = false
-	timer.start()
+	fireRateTimer.start()
 	var bullet_inst = bullet.instantiate()
 	bullet_inst.SetOwner(playerNumber)
 	bullet_inst.set_position(ShootingPoint.get_global_position())
@@ -169,17 +172,29 @@ func _on_bomb_timer_timeout():
 
 
 func activateBuff():
-	print("Buff activated")
-	timerBuff.start()
-	timer.set_wait_time( buffFireRate )
+	var randVal = randf();
+	print(randVal)
+	if(randVal < 0.33):
+		print("Speed increased")
+		MoveSpeed = buffMoveSpeed
+		timerBuff.start()
+	elif(randVal < 0.66):
+		if (BombCount < 3):
+			BombCount += 1
+			print("Bomb increased")
+	else:
+		print("Fire rate increadsed")
+		timerBuff.start()
+		fireRateTimer.set_wait_time( buffFireRate )
 
 
+func _on_buff_timer_timeout():
+	fireRateTimer.set_wait_time( fireRate )
+	MoveSpeed = normalMoveSpeed
+
+	
 func _on_hit_check_area_entered(area: Area2D):
 	var parent = area.get_parent()
 	if parent is Buff:
 		parent.queue_free()
 		activateBuff()
-
-
-func _on_buff_timer_timeout():
-	timer.set_wait_time( fireRate )

@@ -35,7 +35,7 @@ shape = SubResource("CircleShape2D_2gubl")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(2.08165e-12, 16)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="FireRateTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="HitCheck" type="Area2D" parent="."]
@@ -54,7 +54,7 @@ wait_time = 10.0
 [node name="Shoot-Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_h3omm")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="HitCheck" to="." method="_on_hit_check_area_entered"]
 [connection signal="timeout" from="BombPlacementTimer" to="." method="_on_bomb_timer_timeout"]
 [connection signal="timeout" from="BuffTimer" to="." method="_on_buff_timer_timeout"]
