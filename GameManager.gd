@@ -17,6 +17,8 @@ var round_over = false;
 
 @export var WithBombTimer = true;
 
+signal end_of_Round;
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,6 +51,8 @@ func RoundEnd(Loser):
 		else:
 			Winner= "1"
 	
+		emit_signal("end_of_Round")
+		
 		
 		winRat[int(Winner)-1] = winRat[int(Winner)-1] +1;
 		
@@ -61,6 +65,7 @@ func RoundEnd(Loser):
 			ToNextRound(Winner);
 		else:
 			AllRoundPlayed(Winner);
+		
 		
 
 func AllRoundPlayed(Winner):

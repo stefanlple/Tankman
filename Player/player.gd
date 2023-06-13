@@ -4,6 +4,7 @@ class_name Player
 @export var playerNumber = "1"
 #@export var SpriteColor = Color(255, 0, 0, 1);
 @export var HP = 1
+var invs = false;
 @export var texture: Texture2D
 
 # Bomb Variables 
@@ -24,11 +25,15 @@ var BombModeT = true;
 @onready var sprite = get_node("Sprite")
 @onready var ShootingPoint = get_node("Sprite/Node2D")
 @onready var fireRateTimer = get_node("FireRateTimer")
+@onready var invTimer = get_node("InvisableFrames")
+
 @onready var timerBomb = get_node("BombPlacementTimer")
 @onready var timerBuff = get_node("BuffTimer")
 @onready var MoveSpeed = normalMoveSpeed
 
 @onready var SoundPlayer = get_node("Shoot-Sound")
+
+@onready var aniIn = get_node("AnimationPlayer")
 
 var canShoot = true
 var canBomb = true
@@ -152,10 +157,20 @@ func _on_timer_timeout():
 
 
 func TakingHit():
-	HP = HP - 1
+	TakingHitAmount(1)
+		
+func TakingHitAmount(Amount): # Es gibt keine Overload in GDScript
+	HP = HP - Amount
 	if HP <= 0:
 		Death()
+	else:
+		invs = true
+		invTimer.start()
+		VisualDamage()
 
+func VisualDamage():
+	aniIn.play("TookDamage")
+	
 
 func Death():
 	get_node("/root/GameManger").RoundEnd(playerNumber)
@@ -198,3 +213,8 @@ func _on_hit_check_area_entered(area: Area2D):
 	if parent is Buff:
 		parent.queue_free()
 		activateBuff()
+
+
+func _on_invisable_frames_timeout():
+	invs = false;
+

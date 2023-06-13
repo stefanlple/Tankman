@@ -15,6 +15,9 @@ func _ready():
 		get_node("AnimationPlayer").play("Bomb_onTimer");
 	elif(trigger_PerRemote):
 		get_node("AnimationPlayer").play("Bomb_onTriggerM")
+	
+	var emitter = get_node("/root/GameManger")
+	emitter.end_of_Round.connect(RemoveBomb)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -61,3 +64,6 @@ func _unhandled_input(event):
 			
 func Set_trigger_OnTime(setTO):
 	trigger_OnTime = setTO;
+	
+func RemoveBomb():
+	queue_free();

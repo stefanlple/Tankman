@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://jiu2p1rf7dgb" path="res://Assets/Outerwall/smalldeswall.png" id="3_nj6hg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74rrc"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 texture_filter = 1
@@ -18,12 +18,10 @@ NewSprite = ExtResource("3_nj6hg")
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_74rrc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_74rrc")
-
 [node name="WallTexture" type="Sprite2D" parent="."]
 texture = ExtResource("3_nj6hg")
 centered = false
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_74rrc")
