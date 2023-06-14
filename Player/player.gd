@@ -83,6 +83,7 @@ func BombPlace():
 	bomb_inst.set_position(get_global_position())
 	bomb_inst.Set_trigger_OnTime(BombModeT)
 	bomb_inst.SetBombOwner(playerNumber)
+	BlockBombplacement()
 	get_tree().get_root().call_deferred("add_child", bomb_inst)
 
 

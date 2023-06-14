@@ -74,6 +74,7 @@ script/source = "extends Node2D
 
 @onready var player1 = get_tree().get_root().get_node(\"Ingame/Player1\");
 
+
 func getChildrenAndUpdateBombCount():
 	var bombcount= player1.GetBombCount()
 	var children = get_children()
@@ -172,6 +173,7 @@ func _process(delta):
 [node name="Ingame" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_hdvlo")
+wallProbability = 0.25
 buffProbability = 0.01
 metadata/_edit_horizontal_guides_ = []
 
@@ -1547,48 +1549,48 @@ offset_bottom = 250.0
 text = "----"
 horizontal_alignment = 1
 
-[node name="Player 1 UI" type="MarginContainer" parent="UI"]
+[node name="Player1UI" type="MarginContainer" parent="UI"]
 offset_left = -362.0
 offset_top = -20.0
 offset_right = -19.0
 offset_bottom = 160.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Player 1 UI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Player1UI"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UI/Player 1 UI/VBoxContainer"]
+[node name="Label" type="Label" parent="UI/Player1UI/VBoxContainer"]
 layout_mode = 2
 text = "   PLAYER 1"
 vertical_alignment = 2
 
-[node name="TankBlue" type="Sprite2D" parent="UI/Player 1 UI/VBoxContainer/Label"]
+[node name="TankBlue" type="Sprite2D" parent="UI/Player1UI/VBoxContainer/Label"]
 position = Vector2(98, 15)
 texture = ExtResource("4_eolti")
 
-[node name="Bombs" type="Node2D" parent="UI/Player 1 UI"]
+[node name="Bombs" type="Node2D" parent="UI/Player1UI"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 
-[node name="BombGroups" type="Node2D" parent="UI/Player 1 UI/Bombs"]
+[node name="BombGroups" type="Node2D" parent="UI/Player1UI/Bombs"]
 script = SubResource("GDScript_0p6j3")
 
-[node name="Bomb" type="Sprite2D" parent="UI/Player 1 UI/Bombs/BombGroups"]
+[node name="Bomb" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
 position = Vector2(25, 100)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("31_y07dx")
 
-[node name="Bomb2" type="Sprite2D" parent="UI/Player 1 UI/Bombs/BombGroups"]
+[node name="Bomb2" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
 position = Vector2(60, 100)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("31_y07dx")
 
-[node name="Bomb3" type="Sprite2D" parent="UI/Player 1 UI/Bombs/BombGroups"]
+[node name="Bomb3" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
 position = Vector2(95, 100)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("31_y07dx")
 
-[node name="Bombbar" type="Node2D" parent="UI/Player 1 UI/Bombs"]
+[node name="Bombbar" type="Node2D" parent="UI/Player1UI/Bombs"]
 
-[node name="ProgressBar" type="ProgressBar" parent="UI/Player 1 UI/Bombs/Bombbar"]
+[node name="ProgressBar" type="ProgressBar" parent="UI/Player1UI/Bombs/Bombbar"]
 offset_left = 14.0
 offset_top = 117.0
 offset_right = 107.0
@@ -1599,48 +1601,48 @@ value = 50.0
 show_percentage = false
 script = SubResource("GDScript_48l3n")
 
-[node name="Player 2 UI" type="MarginContainer" parent="UI"]
+[node name="Player2UI" type="MarginContainer" parent="UI"]
 offset_left = -362.0
 offset_top = 240.0
 offset_right = -19.0
 offset_bottom = 420.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Player 2 UI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Player2UI"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UI/Player 2 UI/VBoxContainer"]
+[node name="Label" type="Label" parent="UI/Player2UI/VBoxContainer"]
 layout_mode = 2
 text = "   PLAYER 2"
 vertical_alignment = 1
 
-[node name="TankRed" type="Sprite2D" parent="UI/Player 2 UI/VBoxContainer/Label"]
+[node name="TankRed" type="Sprite2D" parent="UI/Player2UI/VBoxContainer/Label"]
 position = Vector2(98, 13)
 texture = ExtResource("7_i4vyj")
 
-[node name="Bombs" type="Node2D" parent="UI/Player 2 UI"]
+[node name="Bombs" type="Node2D" parent="UI/Player2UI"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 
-[node name="BombGroups" type="Node2D" parent="UI/Player 2 UI/Bombs"]
+[node name="BombGroups" type="Node2D" parent="UI/Player2UI/Bombs"]
 script = SubResource("GDScript_rdgr6")
 
-[node name="Bomb" type="Sprite2D" parent="UI/Player 2 UI/Bombs/BombGroups"]
+[node name="Bomb" type="Sprite2D" parent="UI/Player2UI/Bombs/BombGroups"]
 position = Vector2(25, 100)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("31_y07dx")
 
-[node name="Bomb2" type="Sprite2D" parent="UI/Player 2 UI/Bombs/BombGroups"]
+[node name="Bomb2" type="Sprite2D" parent="UI/Player2UI/Bombs/BombGroups"]
 position = Vector2(60, 100)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("31_y07dx")
 
-[node name="Bomb3" type="Sprite2D" parent="UI/Player 2 UI/Bombs/BombGroups"]
+[node name="Bomb3" type="Sprite2D" parent="UI/Player2UI/Bombs/BombGroups"]
 position = Vector2(95, 100)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("31_y07dx")
 
-[node name="Bombbar" type="Node2D" parent="UI/Player 2 UI/Bombs"]
+[node name="Bombbar" type="Node2D" parent="UI/Player2UI/Bombs"]
 
-[node name="ProgressBar" type="ProgressBar" parent="UI/Player 2 UI/Bombs/Bombbar"]
+[node name="ProgressBar" type="ProgressBar" parent="UI/Player2UI/Bombs/Bombbar"]
 offset_left = 14.0
 offset_top = 117.0
 offset_right = 107.0
