@@ -49,15 +49,16 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_aoxi6")
 playerNumber = "<null>"
 HP = 3
 buffFireRate = 0.15
-buffMoveSpeed = 150
+buffMoveSpeed = 125
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-2.08165e-12, -2.08165e-12)
+position = Vector2(1.19209e-07, 2.00272e-05)
 rotation = 3.14159
 texture = ExtResource("2_relfa")
 
@@ -67,21 +68,23 @@ position = Vector2(8, 0)
 scale = Vector2(8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -2.08189e-12)
+position = Vector2(2.00272e-05, 2.00272e-05)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_2gubl")
+one_way_collision_margin = 0.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 2.00272e-05)
 target_position = Vector2(2.08165e-12, 16)
 
 [node name="FireRateTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="HitCheck" type="Area2D" parent="."]
-position = Vector2(-7, -8)
+position = Vector2(-8.99998, -7.99998)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitCheck"]
-position = Vector2(9, 8)
+position = Vector2(11.2222, 7.99998)
 shape = SubResource("RectangleShape2D_n661p")
 
 [node name="BombPlacementTimer" type="Timer" parent="."]
@@ -91,6 +94,7 @@ wait_time = 0.2
 wait_time = 10.0
 
 [node name="Shoot-Sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -1.81899e-12)
 stream = ExtResource("3_h3omm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
