@@ -3,8 +3,8 @@ extends Node2D
 var mapSize = 25
 var tileSize = 16
 var mapArray = []
-@export var wallProbability = 0.3
-@export var buffProbability = 0.005
+@export var wallProbability = 0.9
+@export var buffProbability = 0.01
 
 func _ready():
 	generateMap()

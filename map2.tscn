@@ -1,0 +1,812 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6n2yty2hnjdh"]
+
+[ext_resource type="PackedScene" uid="uid://24n716bgdjaq" path="res://Wall/static_body_2d.tscn" id="1_dqm1t"]
+[ext_resource type="Texture2D" uid="uid://krxm7npwfoy3" path="res://Assets/tiles/wingle wall 2.png" id="2_bvuxd"]
+
+[node name="InnerWalls2" type="Node"]
+
+[node name="Row1" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row1" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 16)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row2" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row2" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 48)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row3" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row3" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 80)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row4" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row4" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 112)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row5" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row5" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 144)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row6" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row6" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 176)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row7" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row7" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 208)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row8" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row8" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 240)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row9" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row9" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 272)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row10" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row10" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row11" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row11" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 304)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row12" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row12" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 336)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="Row13" type="Node" parent="."]
+
+[node name="OuterWall5" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(16, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall6" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(48, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall7" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(80, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall8" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(112, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall9" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(144, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall10" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(176, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall11" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(208, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall12" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(240, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall13" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(272, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall14" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(304, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall15" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(336, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
+
+[node name="OuterWall16" parent="Row13" instance=ExtResource("1_dqm1t")]
+position = Vector2(368, 368)
+indestructible = true
+NewSprite = ExtResource("2_bvuxd")
