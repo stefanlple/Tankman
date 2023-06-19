@@ -219,3 +219,6 @@ func _on_hit_check_area_entered(area: Area2D):
 func _on_invisable_frames_timeout():
 	invs = false;
 
+
+func getHP():
+	return HP;
