@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://chl3g3cagw5i2" path="res://Sounds/441373__matrixxx__heavy_artillery_shot (1).wav" id="3_h3omm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gubl"]
-radius = 6.0
+radius = 5.55554
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n661p"]
 size = Vector2(12, 12)
