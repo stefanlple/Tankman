@@ -37,6 +37,8 @@ var BombModeT = true;
 
 @onready var aniIn = get_node("AnimationPlayer")
 
+@onready var buffBar = get_node("/root/Ingame/UI/Player1UI/BuffUI/BuffBar")
+
 var canShoot = true
 var canBomb = true
 var bullet = preload("res://Bullet.tscn")
@@ -46,6 +48,7 @@ var inputs
 var rotate
 var lastdir = Vector2.RIGHT
 var GRID_SIZE = 16
+var buffActive = false
 
 
 func _ready():
@@ -104,10 +107,13 @@ func _physics_process(delta):
 	move_and_collide(velocity * delta)
 
 func _process(delta):
+	if(buffActive):
+		buffBar.set_value(timerBuff.get_time_left())
 	if(BombCount < BombMAX):
 		BombregTime -= delta;
 	if(BombregTime < 0):
 		GetBombBack()
+	
 
 func GetBombBack():
 	if(BombCount != BombMAX):
@@ -193,7 +199,7 @@ func _on_bomb_timer_timeout():
 func activateBuff():
 	var randVal = randf();
 	print(randVal)
-	PowerUpSound.play()
+	buffActive = true
 	if(randVal < 0.33):
 		print("Speed increased")
 		MoveSpeed = buffMoveSpeed
@@ -211,8 +217,13 @@ func activateBuff():
 func _on_buff_timer_timeout():
 	fireRateTimer.set_wait_time( fireRate )
 	MoveSpeed = normalMoveSpeed
+	buffActive = false
 
-	
+
+func getBuffTimer():
+	return timerBuff.time_left;	
+
+
 func _on_hit_check_area_entered(area: Area2D):
 	var parent = area.get_parent()
 	if parent is Buff:
@@ -226,3 +237,5 @@ func _on_invisable_frames_timeout():
 
 func getHP():
 	return HP;
+
+
