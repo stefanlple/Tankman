@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://3vhoaog18g5b"]
+[gd_scene load_steps=8 format=3 uid="uid://3vhoaog18g5b"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_2rall"]
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="2_rkius"]
 [ext_resource type="Texture2D" uid="uid://bmngchvjksnaa" path="res://Assets/tiles/tank blue.png" id="3_rbaxo"]
 [ext_resource type="Texture2D" uid="uid://bucitm4c6yit8" path="res://Assets/tiles/tank red.png" id="4_s2yim"]
+[ext_resource type="AudioStream" uid="uid://dild4nt7amws7" path="res://Sounds/Joshua McLean - Mountain Trials.mp3" id="5_hde0r"]
+[ext_resource type="AudioStream" uid="uid://df6dkxea2tt6u" path="res://Sounds/RoundSound.wav" id="6_s53gs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_giuxl"]
 line_spacing = 10.0
@@ -50,5 +52,13 @@ position = Vector2(264, 239)
 rotation = -3.14159
 scale = Vector2(2, 1.5)
 texture = ExtResource("4_s2yim")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_hde0r")
+volume_db = -20.0
+
+[node name="RoundSoundEffekt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_s53gs")
+volume_db = 10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
