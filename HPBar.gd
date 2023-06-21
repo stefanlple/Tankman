@@ -15,7 +15,9 @@ func _ready():
 func _process(_delta):
 	if(player!=null):
 		updateHP()
-
+	else:
+		for child in children:
+			child.modulate = Color(1, 1, 1, 0.1) # For Healt zero
 
 func updateHP():
 	var hp = player.getHP()
