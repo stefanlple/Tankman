@@ -6,10 +6,13 @@ var mapArray = []
 @export var wallProbability = 0.9
 @export var buffProbability = 0.01
 
+@onready var music =  get_node("MusicPlayer");
+
 func _ready():
 	generateMap()
 	generateBlocks()
-
+	get_node("/root/GameManger").StartMusic()
+	
 # Called when the node enters the scene tree for the first time.
 func generateMap():
 	for x in range(mapSize):

@@ -32,6 +32,8 @@ var BombModeT = true;
 @onready var MoveSpeed = normalMoveSpeed
 
 @onready var SoundPlayer = get_node("Shoot-Sound")
+@onready var PowerUpSound = get_node("PowerUpSound")
+@onready var HitSound = get_node("Hit")
 
 @onready var aniIn = get_node("AnimationPlayer")
 
@@ -161,6 +163,7 @@ func TakingHit():
 	TakingHitAmount(1)
 		
 func TakingHitAmount(Amount): # Es gibt keine Overload in GDScript
+	HitSound.play()
 	HP = HP - Amount
 	if HP <= 0:
 		Death()
@@ -190,6 +193,7 @@ func _on_bomb_timer_timeout():
 func activateBuff():
 	var randVal = randf();
 	print(randVal)
+	PowerUpSound.play()
 	if(randVal < 0.33):
 		print("Speed increased")
 		MoveSpeed = buffMoveSpeed

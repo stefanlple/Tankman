@@ -3,6 +3,8 @@ extends Node
 @onready var endtext = get_node("EndText")
 @onready var endtextback =get_node("BackGroundText")
 @onready var timer = get_node("Timer")
+@onready var Music = get_node("Music")
+@onready var RoundSoundEffekt = get_node("RoundSoundEffekt")
 
 @onready var UiinScene = get_tree().get_root().get_node("/root/Ingame/RoundText");
 
@@ -40,9 +42,11 @@ func _unhandled_input(event):
 		gameOver = false
 		currentRound = 0;
 		round_over = false;
+		Music.stop()
 		get_tree().change_scene_to_file("res://main_Menu.tscn")
 	
 func RoundEnd(Loser):
+	RoundSoundEffekt.play()
 	if(!round_over):
 		round_over = true;
 		var Winner = "0"
@@ -69,6 +73,7 @@ func RoundEnd(Loser):
 		
 
 func AllRoundPlayed(Winner):
+	Music.stop()
 	var tM = get_tree().get_root().get_node("/root/Ingame/RoundText")
 	tM.ShowText("Player " + Winner + " has Won ",str(winRat[0]),str(winRat[1]),Winner)
 	tM.ShowToNext()
@@ -96,6 +101,7 @@ func VisbleText(on):
 	endtextback.visible = on
 
 func ToNextRound(Winner):
+	
 	timer.start()
 	print("End")
 	get_tree().get_root().get_node("/root/Ingame/RoundText").ShowText("Round " + str(currentRound) ,str(winRat[0]),str(winRat[1]),Winner)
@@ -105,3 +111,6 @@ func SetBombMode(set):
 
 func GetBombMode():
 	return WithBombTimer;
+
+func StartMusic():
+	Music.play()

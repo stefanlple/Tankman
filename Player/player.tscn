@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb83kugbm3u5e"]
+[gd_scene load_steps=11 format=3 uid="uid://bb83kugbm3u5e"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_aoxi6"]
 [ext_resource type="Texture2D" uid="uid://bmngchvjksnaa" path="res://Assets/tiles/tank blue.png" id="2_relfa"]
 [ext_resource type="AudioStream" uid="uid://chl3g3cagw5i2" path="res://Sounds/441373__matrixxx__heavy_artillery_shot (1).wav" id="3_h3omm"]
+[ext_resource type="AudioStream" uid="uid://bhxu10s6iune" path="res://Sounds/mixkit-retro-game-notification-212.wav" id="4_da4wb"]
+[ext_resource type="AudioStream" uid="uid://b8pjlpgu0shsg" path="res://Sounds/hit__8-bit-slam.mp3" id="5_44r73"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gubl"]
 radius = 5.55554
@@ -54,11 +56,11 @@ script = ExtResource("1_aoxi6")
 playerNumber = "<null>"
 HP = 3
 buffFireRate = 0.15
-buffMoveSpeed = 125
+buffMoveSpeed = 110
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1.19209e-07, 2.00272e-05)
+position = Vector2(-2.30926e-12, -3.63798e-12)
 rotation = 3.14159
 texture = ExtResource("2_relfa")
 
@@ -104,6 +106,14 @@ libraries = {
 
 [node name="InvisableFrames" type="Timer" parent="."]
 wait_time = 0.25
+
+[node name="PowerUpSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -3.63798e-12)
+stream = ExtResource("4_da4wb")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_44r73")
+volume_db = 2.5
 
 [connection signal="timeout" from="FireRateTimer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="HitCheck" to="." method="_on_hit_check_area_entered"]
