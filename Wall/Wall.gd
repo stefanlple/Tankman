@@ -8,6 +8,8 @@ class_name Wall
 
 @onready var sprite = get_node("WallTexture")
 
+var death = preload("res://death_effekt.tscn")
+
 @export var NewSprite: Texture2D
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +26,7 @@ func GetHit():
 	if (!indestructible):
 		hp = hp -1
 		if (hp <= 0):
+			DeathE()
 			queue_free() 
 	
 
@@ -32,3 +35,12 @@ func GetInDestructable():
 
 func GetOutside():
 	return outside;
+
+func DeathE():
+	print("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+	var death_inst = death.instantiate()
+	death_inst.set_position(get_global_position())
+	death_inst.set_rotation_degrees(get_global_rotation_degrees())
+	get_tree().get_root().call_deferred("add_child", death_inst)
+
+

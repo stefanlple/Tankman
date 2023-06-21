@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyaqyfs1rn8tt"]
+
+[ext_resource type="Script" path="res://death_effekt.gd" id="1_0rjxq"]
+[ext_resource type="Texture2D" uid="uid://dfyovx3e1g4mq" path="res://DeathBlockEffekt/sprite_0.png" id="1_wh4ky"]
+[ext_resource type="Texture2D" uid="uid://jxfcdgjus2r8" path="res://DeathBlockEffekt/sprite_1.png" id="2_vtg2o"]
+[ext_resource type="Texture2D" uid="uid://phcu3orwvbsx" path="res://DeathBlockEffekt/sprite_2.png" id="3_k844p"]
+[ext_resource type="Texture2D" uid="uid://7xwlovn6nhut" path="res://DeathBlockEffekt/sprite_3.png" id="4_q2kej"]
+[ext_resource type="Texture2D" uid="uid://bxtffvs8chvbf" path="res://DeathBlockEffekt/sprite_4.png" id="5_5ti7q"]
+[ext_resource type="Texture2D" uid="uid://hl5b0iwqsg5c" path="res://DeathBlockEffekt/sprite_5.png" id="6_r1vwy"]
+[ext_resource type="AudioStream" uid="uid://cyw32hccasyim" path="res://Sounds/318969__dewaholic__kick-hard-8-bit.wav" id="7_5mm1k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vk0qb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wh4ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vtg2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k844p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q2kej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5ti7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r1vwy")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 30.0
+}]
+
+[node name="DeathEffekt" type="Node2D"]
+script = ExtResource("1_0rjxq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_vk0qb")
+animation = &"Hit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_5mm1k")
+volume_db = 1.0
+pitch_scale = 2.0
+autoplay = true
+attenuation = 0.870551
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
