@@ -18,9 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://coqkwcxb15vhg" path="res://Assets/Outerwall/image (1).jpg" id="12_lk4av"]
 [ext_resource type="Texture2D" uid="uid://c6jak4fss0idx" path="res://Assets/Outerwall/image (1).png" id="13_xen56"]
 [ext_resource type="Texture2D" uid="uid://jly7x6i823xp" path="res://Assets/Outerwall/image (2).png" id="15_hlm8k"]
-[ext_resource type="PackedScene" uid="uid://bt36fonmfm5n" path="res://map3.tscn" id="17_a7q3b"]
-[ext_resource type="PackedScene" uid="uid://chw04bnbqyq0a" path="res://map1.tscn" id="17_ps4vk"]
-[ext_resource type="PackedScene" uid="uid://b6n2yty2hnjdh" path="res://map2.tscn" id="18_1rykv"]
+[ext_resource type="PackedScene" path="res://map3.tscn" id="17_a7q3b"]
+[ext_resource type="PackedScene" path="res://map1.tscn" id="17_ps4vk"]
+[ext_resource type="PackedScene" path="res://map2.tscn" id="18_1rykv"]
 [ext_resource type="Texture2D" uid="uid://biyrlxrcnh6y6" path="res://Assets/tiles/heart.png" id="23_awq62"]
 [ext_resource type="Script" path="res://HPBar.gd" id="23_goewl"]
 [ext_resource type="Texture2D" uid="uid://b4ffnch11tu75" path="res://Assets/tiles/bomb.png" id="31_y07dx"]
@@ -948,10 +948,10 @@ offset_bottom = 160.0
 [node name="BuffUI" type="Node2D" parent="UI/Player1UI"]
 
 [node name="BuffBar" type="ProgressBar" parent="UI/Player1UI/BuffUI"]
-offset_left = 11.462
-offset_top = 214.0
-offset_right = 104.462
-offset_bottom = 218.0
+offset_left = 10.462
+offset_top = 196.0
+offset_right = 103.462
+offset_bottom = 200.0
 theme_override_styles/background = SubResource("StyleBoxFlat_up4bq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3mgj8")
 max_value = 10.0
