@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://w8lpttcsvvs5"]
+[gd_scene load_steps=40 format=3 uid="uid://w8lpttcsvvs5"]
 
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="1_8otdx"]
 [ext_resource type="Script" path="res://ingame.gd" id="1_hdvlo"]
@@ -21,8 +21,11 @@
 [ext_resource type="PackedScene" path="res://map3.tscn" id="17_a7q3b"]
 [ext_resource type="PackedScene" path="res://map1.tscn" id="17_ps4vk"]
 [ext_resource type="PackedScene" path="res://map2.tscn" id="18_1rykv"]
+[ext_resource type="Texture2D" uid="uid://bxhj512u2m8nh" path="res://Assets/tiles/speedBuff.png" id="22_p8jud"]
+[ext_resource type="Texture2D" uid="uid://dt2i16c63ltj7" path="res://Assets/tiles/bulletBuff.png" id="23_7rvjv"]
 [ext_resource type="Texture2D" uid="uid://biyrlxrcnh6y6" path="res://Assets/tiles/heart.png" id="23_awq62"]
 [ext_resource type="Script" path="res://HPBar.gd" id="23_goewl"]
+[ext_resource type="Texture2D" uid="uid://r1t4lgwltn1l" path="res://Assets/tiles/bombBuff.png" id="24_qdahx"]
 [ext_resource type="Texture2D" uid="uid://b4ffnch11tu75" path="res://Assets/tiles/bomb.png" id="31_y07dx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvalu"]
@@ -940,18 +943,18 @@ text = "----"
 horizontal_alignment = 1
 
 [node name="Player1UI" type="MarginContainer" parent="UI"]
-offset_left = -362.0
-offset_top = -20.0
-offset_right = -193.0
-offset_bottom = 160.0
+offset_left = -350.538
+offset_right = -181.538
+offset_bottom = 180.0
 
 [node name="BuffUI" type="Node2D" parent="UI/Player1UI"]
 
 [node name="BuffBar" type="ProgressBar" parent="UI/Player1UI/BuffUI"]
-offset_left = 10.462
-offset_top = 196.0
-offset_right = 103.462
-offset_bottom = 200.0
+offset_left = 11.462
+offset_top = 228.0
+offset_right = 104.462
+offset_bottom = 232.0
+scale = Vector2(1.2, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_up4bq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3mgj8")
 max_value = 10.0
@@ -959,32 +962,50 @@ step = 0.001
 value = 10.0
 show_percentage = false
 
+[node name="TextureRect" type="TextureRect" parent="UI/Player1UI/BuffUI"]
+offset_left = 11.462
+offset_top = 188.0
+offset_right = 43.462
+offset_bottom = 220.0
+texture = ExtResource("22_p8jud")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Player1UI/BuffUI"]
+offset_left = 51.462
+offset_top = 188.0
+offset_right = 83.462
+offset_bottom = 220.0
+texture = ExtResource("23_7rvjv")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Player1UI/BuffUI"]
+offset_left = 91.462
+offset_top = 188.0
+offset_right = 123.462
+offset_bottom = 220.0
+texture = ExtResource("24_qdahx")
+
 [node name="HPBar" type="Node2D" parent="UI/Player1UI"]
 position = Vector2(186.462, 20)
 script = ExtResource("23_goewl")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Player1UI/HPBar"]
-offset_left = -177.0
-offset_top = 139.0
-offset_right = -137.0
-offset_bottom = 179.0
-scale = Vector2(0.614, 0.614)
+offset_left = -175.0
+offset_top = 120.0
+offset_right = -143.0
+offset_bottom = 152.0
 texture = ExtResource("23_awq62")
 
 [node name="TextureRect2" type="TextureRect" parent="UI/Player1UI/HPBar"]
-offset_left = -142.0
-offset_top = 139.0
-offset_right = -102.0
-offset_bottom = 179.0
-scale = Vector2(0.614, 0.614)
+offset_left = -135.0
+offset_top = 120.0
+offset_right = -103.0
+offset_bottom = 152.0
 texture = ExtResource("23_awq62")
 
 [node name="TextureRect3" type="TextureRect" parent="UI/Player1UI/HPBar"]
-offset_left = -108.0
-offset_top = 139.0
-offset_right = -68.0
-offset_bottom = 179.0
-scale = Vector2(0.614, 0.614)
+offset_left = -95.0
+offset_top = 120.0
+offset_right = -63.0
+offset_bottom = 152.0
 texture = ExtResource("23_awq62")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Player1UI"]
@@ -1008,28 +1029,29 @@ position = Vector2(-3.53799, 0)
 script = SubResource("GDScript_0p6j3")
 
 [node name="Bomb" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
-position = Vector2(25, 100)
-scale = Vector2(1.5, 1.5)
+position = Vector2(30.538, 100)
+scale = Vector2(2, 2)
 texture = ExtResource("31_y07dx")
 
 [node name="Bomb2" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
-position = Vector2(60, 100)
-scale = Vector2(1.5, 1.5)
+position = Vector2(70.538, 100)
+scale = Vector2(2, 2)
 texture = ExtResource("31_y07dx")
 
 [node name="Bomb3" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
-position = Vector2(95, 100)
-scale = Vector2(1.5, 1.5)
+position = Vector2(110.538, 100)
+scale = Vector2(2, 2)
 texture = ExtResource("31_y07dx")
 
 [node name="Bombbar" type="Node2D" parent="UI/Player1UI/Bombs"]
 position = Vector2(-3.53799, 0)
 
 [node name="ProgressBar" type="ProgressBar" parent="UI/Player1UI/Bombs/Bombbar"]
-offset_left = 14.0
-offset_top = 117.0
-offset_right = 107.0
-offset_bottom = 121.0
+offset_left = 14.538
+offset_top = 124.0
+offset_right = 107.538
+offset_bottom = 128.0
+scale = Vector2(1.2, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_up4bq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3mgj8")
 value = 50.0
