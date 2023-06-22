@@ -963,6 +963,7 @@ value = 10.0
 show_percentage = false
 
 [node name="TextureRect" type="TextureRect" parent="UI/Player1UI/BuffUI"]
+modulate = Color(0.490196, 0.490196, 0.490196, 0.490196)
 offset_left = 11.462
 offset_top = 188.0
 offset_right = 43.462
@@ -970,6 +971,7 @@ offset_bottom = 220.0
 texture = ExtResource("22_p8jud")
 
 [node name="TextureRect2" type="TextureRect" parent="UI/Player1UI/BuffUI"]
+modulate = Color(0.490196, 0.490196, 0.490196, 0.490196)
 offset_left = 51.462
 offset_top = 188.0
 offset_right = 83.462
@@ -977,6 +979,7 @@ offset_bottom = 220.0
 texture = ExtResource("23_7rvjv")
 
 [node name="TextureRect3" type="TextureRect" parent="UI/Player1UI/BuffUI"]
+modulate = Color(0.490196, 0.490196, 0.490196, 0.490196)
 offset_left = 91.462
 offset_top = 188.0
 offset_right = 123.462
