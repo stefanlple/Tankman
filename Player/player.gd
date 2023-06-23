@@ -33,7 +33,7 @@ var BombModeT = true;
 
 @onready var SoundPlayer = get_node("Shoot-Sound")
 @onready var PowerUpSound = get_node("PowerUpSound")
-@onready var HitSound = get_node("Hit")
+# @onready var HitSound = get_node("Hit")
 
 @onready var aniIn = get_node("AnimationPlayer")
 
@@ -169,7 +169,7 @@ func TakingHit():
 	TakingHitAmount(1)
 		
 func TakingHitAmount(Amount): # Es gibt keine Overload in GDScript
-	HitSound.play()
+	# HitSound.play()
 	HP = HP - Amount
 	if HP <= 0:
 		Death()

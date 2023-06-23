@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://w8lpttcsvvs5"]
+[gd_scene load_steps=41 format=3 uid="uid://w8lpttcsvvs5"]
 
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="1_8otdx"]
 [ext_resource type="Script" path="res://ingame.gd" id="1_hdvlo"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" path="res://map3.tscn" id="17_a7q3b"]
 [ext_resource type="PackedScene" path="res://map1.tscn" id="17_ps4vk"]
 [ext_resource type="PackedScene" path="res://map2.tscn" id="18_1rykv"]
+[ext_resource type="Texture2D" uid="uid://pdmba5povh2r" path="res://Assets/tiles/keymap1.2.png" id="22_0c0s6"]
 [ext_resource type="Texture2D" uid="uid://bxhj512u2m8nh" path="res://Assets/tiles/speedBuff.png" id="22_p8jud"]
 [ext_resource type="Texture2D" uid="uid://dt2i16c63ltj7" path="res://Assets/tiles/bulletBuff.png" id="23_7rvjv"]
 [ext_resource type="Texture2D" uid="uid://biyrlxrcnh6y6" path="res://Assets/tiles/heart.png" id="23_awq62"]
@@ -943,16 +944,24 @@ text = "----"
 horizontal_alignment = 1
 
 [node name="Player1UI" type="MarginContainer" parent="UI"]
-offset_left = -350.538
-offset_right = -181.538
-offset_bottom = 180.0
+offset_left = -361.538
+offset_top = -18.0
+offset_right = -192.538
+offset_bottom = 162.0
+
+[node name="Keymap1" type="Sprite2D" parent="UI/Player1UI"]
+modulate = Color(1, 1, 1, 0.490196)
+position = Vector2(77, 347)
+scale = Vector2(2, 2)
+texture = ExtResource("22_0c0s6")
 
 [node name="BuffUI" type="Node2D" parent="UI/Player1UI"]
+position = Vector2(16, 7)
 
 [node name="BuffBar" type="ProgressBar" parent="UI/Player1UI/BuffUI"]
-offset_left = 11.462
+offset_left = 7.99999
 offset_top = 228.0
-offset_right = 104.462
+offset_right = 101.0
 offset_bottom = 232.0
 scale = Vector2(1.2, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_up4bq")
@@ -961,33 +970,37 @@ max_value = 10.0
 step = 0.001
 value = 10.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI/Player1UI/BuffUI"]
 modulate = Color(0.490196, 0.490196, 0.490196, 0.490196)
-offset_left = 11.462
+offset_left = 8.0
 offset_top = 188.0
-offset_right = 43.462
+offset_right = 40.0
 offset_bottom = 220.0
 texture = ExtResource("22_p8jud")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="UI/Player1UI/BuffUI"]
 modulate = Color(0.490196, 0.490196, 0.490196, 0.490196)
-offset_left = 51.462
+offset_left = 48.0
 offset_top = 188.0
-offset_right = 83.462
+offset_right = 80.0
 offset_bottom = 220.0
 texture = ExtResource("23_7rvjv")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="UI/Player1UI/BuffUI"]
 modulate = Color(0.490196, 0.490196, 0.490196, 0.490196)
-offset_left = 91.462
+offset_left = 88.0
 offset_top = 188.0
-offset_right = 123.462
+offset_right = 120.0
 offset_bottom = 220.0
 texture = ExtResource("24_qdahx")
+metadata/_edit_use_anchors_ = true
 
 [node name="HPBar" type="Node2D" parent="UI/Player1UI"]
-position = Vector2(186.462, 20)
+position = Vector2(200, -70)
 script = ExtResource("23_goewl")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Player1UI/HPBar"]
@@ -1025,24 +1038,24 @@ position = Vector2(40, 15)
 texture = ExtResource("4_eolti")
 
 [node name="Bombs" type="Node2D" parent="UI/Player1UI"]
-position = Vector2(0.462006, 2.08165e-12)
+position = Vector2(16, 26)
 
 [node name="BombGroups" type="Node2D" parent="UI/Player1UI/Bombs"]
 position = Vector2(-3.53799, 0)
 script = SubResource("GDScript_0p6j3")
 
 [node name="Bomb" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
-position = Vector2(30.538, 100)
+position = Vector2(27.538, 100)
 scale = Vector2(2, 2)
 texture = ExtResource("31_y07dx")
 
 [node name="Bomb2" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
-position = Vector2(70.538, 100)
+position = Vector2(67.538, 100)
 scale = Vector2(2, 2)
 texture = ExtResource("31_y07dx")
 
 [node name="Bomb3" type="Sprite2D" parent="UI/Player1UI/Bombs/BombGroups"]
-position = Vector2(110.538, 100)
+position = Vector2(107.538, 100)
 scale = Vector2(2, 2)
 texture = ExtResource("31_y07dx")
 
@@ -1050,9 +1063,9 @@ texture = ExtResource("31_y07dx")
 position = Vector2(-3.53799, 0)
 
 [node name="ProgressBar" type="ProgressBar" parent="UI/Player1UI/Bombs/Bombbar"]
-offset_left = 14.538
+offset_left = 11.538
 offset_top = 124.0
-offset_right = 107.538
+offset_right = 104.538
 offset_bottom = 128.0
 scale = Vector2(1.2, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_up4bq")
