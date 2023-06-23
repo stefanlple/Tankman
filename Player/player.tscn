@@ -51,7 +51,6 @@ _data = {
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_aoxi6")
-playerNumber = "<null>"
 HP = 3
 buffFireRate = 0.15
 buffMoveSpeed = 125

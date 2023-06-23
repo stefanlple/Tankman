@@ -37,7 +37,12 @@ var BombModeT = true;
 
 @onready var aniIn = get_node("AnimationPlayer")
 
-@onready var buffBar = get_node("/root/Ingame/UI/Player1UI/BuffUI/BuffBar")
+@onready var playerString = "UI/Player1UI" if (playerNumber == "1") else "UI2/Player2UI"
+
+@onready var buffBar = get_node("/root/Ingame/" + playerString + "/BuffUI/BuffBar")
+@onready var speedBuff = get_node("/root/Ingame/" + playerString + "/BuffUI/SpeedBuff")
+@onready var bulletBuff = get_node("/root/Ingame/" + playerString + "/BuffUI/BulletBuff")
+@onready var bombBuff = get_node("/root/Ingame/" + playerString + "/BuffUI/BombBuff")
 
 var canShoot = true
 var canBomb = true
@@ -64,8 +69,8 @@ func _ready():
 	fireRateTimer.set_wait_time( fireRate )
 	BombregTime = BombregTimeMax;
 	BombModeT = get_node("/root/GameManger").GetBombMode();
-	
-	
+	deactivateAllBuffIcons()
+
 
 func _unhandled_input(event):
 	#for dir in inputs.keys():
@@ -200,24 +205,35 @@ func activateBuff():
 	var randVal = randf();
 	print(randVal)
 	buffActive = true
+	deactivateAllBuffIcons()
 	if(randVal < 0.33):
 		print("Speed increased")
 		MoveSpeed = buffMoveSpeed
 		timerBuff.start()
+		speedBuff.modulate = Color(1, 1, 1, 1)
 	elif(randVal < 0.66):
 		if (BombCount < 3):
 			BombCount += 1
 			print("Bomb increased")
+			bombBuff.modulate = Color(1, 1, 1, 1)
 	else:
 		print("Fire rate increadsed")
 		timerBuff.start()
 		fireRateTimer.set_wait_time( buffFireRate )
+		bulletBuff.modulate = Color(1, 1, 1, 1)
 
 
 func _on_buff_timer_timeout():
 	fireRateTimer.set_wait_time( fireRate )
 	MoveSpeed = normalMoveSpeed
 	buffActive = false
+	deactivateAllBuffIcons()
+
+
+func deactivateAllBuffIcons():
+	speedBuff.modulate = Color(1, 1, 1, 0.5)
+	bulletBuff.modulate = Color(1, 1, 1, 0.5)
+	bombBuff.modulate = Color(1, 1, 1, 0.5)
 
 
 func getBuffTimer():
