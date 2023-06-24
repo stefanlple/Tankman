@@ -148,9 +148,9 @@ offset_bottom = 456.0
 scale = Vector2(0.106566, 0.157913)
 text = "WithBombTimer
 - Bomb will explode after a short time
--Bomb can be prematurely detoned per Trigger Botton
+-Bomb can be prematurely detoned with Trigger Botton
 WithoutBombTimer
-- Bomb can only be detoned per the Trigger Botton"
+- Bomb can only be detoned with the Trigger Botton"
 label_settings = SubResource("LabelSettings_wx1fc")
 metadata/_edit_use_anchors_ = true
 
