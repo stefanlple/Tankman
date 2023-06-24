@@ -1,42 +1,98 @@
-[gd_scene load_steps=3 format=3 uid="uid://cusnw06hahtgm"]
+[gd_scene load_steps=13 format=3 uid="uid://cusnw06hahtgm"]
 
 [ext_resource type="Script" path="res://MenuScript.gd" id="1_kpmoj"]
+[ext_resource type="Theme" uid="uid://d21efx21himf0" path="res://Themes/ButtonTheme.tres" id="2_4dm0c"]
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="2_libql"]
+[ext_resource type="Texture2D" uid="uid://cubexvfjqbdq7" path="res://TitleImage.jpg" id="2_us5ub"]
+[ext_resource type="Theme" uid="uid://bm72stnpa8vmk" path="res://Themes/OptionButton.tres" id="4_2s4g5"]
+[ext_resource type="Theme" uid="uid://cs8q2lh7llwd3" path="res://Themes/CheckBoxTheme.tres" id="5_8061a"]
+[ext_resource type="Texture2D" uid="uid://dx7qechvr44n5" path="res://Themes/88.png" id="5_ys7nl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lq5va"]
+font_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_lds77"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_n5kqb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hqqoe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wx1fc"]
+font_size = 54
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_kpmoj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 203.0
+offset_top = 61.0
+offset_right = 216.0
+offset_bottom = 74.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(6.40001, 7)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_libql")
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 203.0
+offset_top = 60.0
+offset_right = 216.0
+offset_bottom = 81.0
+text = "?"
+label_settings = SubResource("LabelSettings_lq5va")
+horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Button" type="Button" parent="."]
 texture_filter = 1
-offset_left = -48.0
-offset_top = -79.0
-offset_right = 48.0
-offset_bottom = -19.0
+offset_left = -52.0
+offset_top = 24.0
+offset_right = 44.0
+offset_bottom = 84.0
+scale = Vector2(1.08, 1)
+theme = ExtResource("2_4dm0c")
 text = "Start"
+metadata/_edit_use_anchors_ = true
 
 [node name="BackGroundText" type="Sprite2D" parent="."]
-modulate = Color(0.12549, 0.12549, 0.12549, 1)
 show_behind_parent = true
-position = Vector2(-3.8147e-06, -1)
-scale = Vector2(39.973, 22.5)
-texture = ExtResource("2_libql")
+position = Vector2(-4, -31)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("2_us5ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.647059)
+position = Vector2(127, 54)
+scale = Vector2(18, 7)
+texture = ExtResource("5_ys7nl")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = -68.0
-offset_top = -120.0
-offset_right = -17.0
-offset_bottom = -94.0
-text = "Round"
+offset_left = 57.0
+offset_top = 28.0
+offset_right = 112.0
+offset_bottom = 54.0
+text = "Round:"
+label_settings = SubResource("LabelSettings_lds77")
+metadata/_edit_use_anchors_ = true
 
 [node name="OptionButton" type="OptionButton" parent="."]
-offset_left = 16.0
-offset_top = -118.0
-offset_right = 69.0
-offset_bottom = -87.0
+texture_filter = 1
+texture_repeat = 1
+offset_left = 114.0
+offset_top = 29.0
+offset_right = 167.0
+offset_bottom = 60.0
 scale = Vector2(0.901617, 0.739426)
+theme = ExtResource("4_2s4g5")
+keep_pressed_outside = true
+button_group = SubResource("ButtonGroup_n5kqb")
 item_count = 4
 selected = 1
 popup/item_0/text = "1"
@@ -47,102 +103,58 @@ popup/item_2/text = "5"
 popup/item_2/id = 1
 popup/item_3/text = "7"
 popup/item_3/id = 2
-
-[node name="Label2" type="Label" parent="."]
-texture_filter = 1
-offset_left = -39.0
-offset_top = -171.0
-offset_right = 34.0
-offset_bottom = -145.0
-text = "Tankman"
-
-[node name="Controls" type="Label" parent="."]
-texture_filter = 1
-offset_left = -29.0
-offset_top = 25.0
-offset_right = 29.0
-offset_bottom = 51.0
-text = "Control"
-
-[node name="p1" type="Label" parent="Controls"]
-texture_filter = 1
-layout_mode = 0
-offset_left = -196.0
-offset_top = -7.0
-offset_right = -138.0
-offset_bottom = 19.0
-text = "Player1"
-
-[node name="Label" type="Label" parent="Controls/p1"]
-layout_mode = 0
-offset_left = -62.0
-offset_top = 23.0
-offset_right = 22.0
-offset_bottom = 153.0
-text = "Movement
-w -UP
-s - DOWN
-d - RIGHT
-a - LEFT"
-
-[node name="Label2" type="Label" parent="Controls/p1"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 25.0
-offset_right = 184.0
-offset_bottom = 129.0
-text = "Weapon
-e - SHOOT
-q - PLANT BOMB
-r - TRIGGER BOMB"
-
-[node name="p2" type="Label" parent="Controls"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 151.0
-offset_top = -3.0
-offset_right = 209.0
-offset_bottom = 23.0
-text = "Player2"
-
-[node name="Label" type="Label" parent="Controls/p2"]
-layout_mode = 0
-offset_left = -62.0
-offset_top = 23.0
-offset_right = 22.0
-offset_bottom = 153.0
-text = "Movement
-i -UP
-k - DOWN
-j - RIGHT
-l - LEFT"
-
-[node name="Label2" type="Label" parent="Controls/p2"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 25.0
-offset_right = 184.0
-offset_bottom = 129.0
-text = "Weapon
-o - SHOOT
-u - PLANT BOMB
-p - TRIGGER BOMB"
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckBox" type="CheckBox" parent="."]
-offset_left = -91.0
-offset_top = -12.0
-offset_right = -67.0
-offset_bottom = 12.0
+texture_filter = 1
+offset_left = 51.0
+offset_top = 54.0
+offset_right = 76.0
+offset_bottom = 78.0
+theme = ExtResource("5_8061a")
 button_pressed = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="."]
 texture_filter = 1
-offset_left = -64.0
-offset_top = -13.0
-offset_right = 68.0
-offset_bottom = 13.0
+offset_left = 74.0
+offset_top = 55.0
+offset_right = 206.0
+offset_bottom = 81.0
 text = "WithBombTimer"
+label_settings = SubResource("LabelSettings_hqqoe")
+metadata/_edit_use_anchors_ = true
 
+[node name="HinttoShow2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(136.5, 113.031)
+scale = Vector2(9.9375, 4.37882)
+texture = ExtResource("2_libql")
+
+[node name="HinttoShow" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -0.00257063
+anchor_top = -0.000587463
+anchor_right = -72.3526
+anchor_bottom = 1.27616
+offset_left = 60.0
+offset_top = 80.0
+offset_right = 4418.0
+offset_bottom = 465.0
+scale = Vector2(0.106566, 0.157913)
+text = "WithTimer
+- Bomb will explode after a short time
+-Bomb can be prematurely detoned per Trigger Botton
+WithoutTimer
+- Bomb can only be detoned per the Trigger Botton"
+label_settings = SubResource("LabelSettings_wx1fc")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="HBoxContainer" to="." method="_on_h_box_container_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer" to="." method="_on_h_box_container_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

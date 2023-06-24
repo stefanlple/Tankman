@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://w8lpttcsvvs5"]
+[gd_scene load_steps=47 format=3 uid="uid://w8lpttcsvvs5"]
 
 [ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="1_8otdx"]
 [ext_resource type="Script" path="res://ingame.gd" id="1_hdvlo"]
@@ -21,13 +21,14 @@
 [ext_resource type="PackedScene" uid="uid://bt36fonmfm5n" path="res://map3.tscn" id="17_a7q3b"]
 [ext_resource type="PackedScene" uid="uid://chw04bnbqyq0a" path="res://map1.tscn" id="17_ps4vk"]
 [ext_resource type="PackedScene" uid="uid://b6n2yty2hnjdh" path="res://map2.tscn" id="18_1rykv"]
-[ext_resource type="Texture2D" uid="uid://pdmba5povh2r" path="res://Assets/tiles/keymap1.2.png" id="22_0c0s6"]
+[ext_resource type="Texture2D" uid="uid://4wifim0bdh6r" path="res://Assets/tiles/KeymapWithTriggerP1.png" id="22_k3ed0"]
 [ext_resource type="Texture2D" uid="uid://bxhj512u2m8nh" path="res://Assets/tiles/speedBuff.png" id="22_p8jud"]
 [ext_resource type="Texture2D" uid="uid://dt2i16c63ltj7" path="res://Assets/tiles/bulletBuff.png" id="23_7rvjv"]
+[ext_resource type="Texture2D" uid="uid://drmuypkxe4gc3" path="res://Assets/tiles/BlackWhiteExploion.png" id="23_a03m2"]
 [ext_resource type="Texture2D" uid="uid://biyrlxrcnh6y6" path="res://Assets/tiles/heart.png" id="23_awq62"]
 [ext_resource type="Script" path="res://HPBar.gd" id="23_goewl"]
 [ext_resource type="Texture2D" uid="uid://r1t4lgwltn1l" path="res://Assets/tiles/bombBuff.png" id="24_qdahx"]
-[ext_resource type="Texture2D" uid="uid://cdbmx3p63p65u" path="res://Assets/tiles/keymap2.png" id="29_tbbjm"]
+[ext_resource type="Texture2D" uid="uid://nvdrk3ekd6bu" path="res://Assets/tiles/KeymapWithTriggerP2.png" id="30_8fmgb"]
 [ext_resource type="Texture2D" uid="uid://b4ffnch11tu75" path="res://Assets/tiles/bomb.png" id="31_y07dx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvalu"]
@@ -218,7 +219,7 @@ corner_radius_bottom_left = 12
 [node name="Ingame" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_hdvlo")
-wallProbability = 0.25
+wallProbability = 0.35
 metadata/_edit_horizontal_guides_ = []
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -979,9 +980,14 @@ offset_bottom = 162.0
 
 [node name="Keymap1" type="Sprite2D" parent="UI/Player1UI"]
 modulate = Color(1, 1, 1, 0.490196)
-position = Vector2(77, 347)
-scale = Vector2(2, 2)
-texture = ExtResource("22_0c0s6")
+position = Vector2(81, 338)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("22_k3ed0")
+
+[node name="Explosion2" type="Sprite2D" parent="UI/Player1UI/Keymap1"]
+position = Vector2(16.5273, 39.2852)
+scale = Vector2(0.746582, 0.776856)
+texture = ExtResource("23_a03m2")
 
 [node name="BuffUI" type="Node2D" parent="UI/Player1UI"]
 position = Vector2(27, 170)
@@ -1124,9 +1130,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Keymap2" type="Sprite2D" parent="UI2/ColorRect"]
 modulate = Color(1, 1, 1, 0.490196)
-position = Vector2(80.897, 349)
-scale = Vector2(2, 2)
-texture = ExtResource("29_tbbjm")
+position = Vector2(85, 340)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("30_8fmgb")
+
+[node name="BlackWhiteExploion" type="Sprite2D" parent="UI2/ColorRect/Keymap2"]
+position = Vector2(16, 39)
+scale = Vector2(0.666, 0.777)
+texture = ExtResource("23_a03m2")
 
 [node name="RoundText" type="Label" parent="UI2/ColorRect"]
 visible = false

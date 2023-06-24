@@ -74,7 +74,7 @@ func _ready():
 	fireRateTimer.set_wait_time( fireRate )
 	BombregTime = BombregTimeMax;
 	BombModeT = get_node("/root/GameManger").GetBombMode();
-	deactivateAllBuffIcons()
+	
 
 
 func _unhandled_input(event):
@@ -267,7 +267,6 @@ func _on_buff_timer_timeout():
 func deactivateAllBuffIcons():
 	speedBuff.modulate = Color(1, 1, 1, 0.5)
 	bulletBuff.modulate = Color(1, 1, 1, 0.5)
-	#bombBuff.modulate = Color(1, 1, 1, 0.5)
 
 func deactivateBombIcon():
 	bombBuff.modulate = Color(1, 1, 1, 0.5)
