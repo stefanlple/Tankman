@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://kbankgqnncbd"]
+[gd_scene load_steps=6 format=3 uid="uid://kbankgqnncbd"]
 
 [ext_resource type="Script" path="res://ExplosionSingle.gd" id="1_251ry"]
 [ext_resource type="Texture2D" uid="uid://dxhyvpxpqni8p" path="res://Assets/tiles/Explosion3.png" id="2_j1sec"]
@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmps2"]
 size = Vector2(11.1111, 11.1111)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostsg"]
+size = Vector2(4.44444, 4.44444)
+
 [node name="Explosion" type="Area2D"]
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_251ry")
@@ -14,7 +17,7 @@ script = ExtResource("1_251ry")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(2.6491e-07, 0)
+position = Vector2(-2.11927e-07, 2.86102e-06)
 shape = SubResource("RectangleShape2D_vmps2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -30,5 +33,11 @@ wait_time = 0.03
 stream = ExtResource("3_x6oeh")
 panning_strength = 2.0
 
+[node name="UnderArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnderArea"]
+shape = SubResource("RectangleShape2D_ostsg")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="UnderArea" to="." method="_on_under_area_area_entered"]

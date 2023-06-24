@@ -66,11 +66,18 @@ func _on_area_entered(area):
 		area.get_parent().TakingHitAmount(10) # -> Intsa Kill
 		if(!center):
 			queue_free() 
-	if (area.get_parent() is Wall):
-		area.get_parent().GetHit()
-		if(!(center || area.get_parent().GetOutside())):
-			queue_free() 
+	#if (area.get_parent() is Wall):
+	#	area.get_parent().GetHit()
+	#	if(!(center || area.get_parent().GetOutside())):
+	#		queue_free() 
 	if (area.get_parent() is Bomb):
 		area.get_parent().GetHit()
 		if(!center):
+			queue_free() 
+
+
+func _on_under_area_area_entered(area):
+	if (area.get_parent() is Wall):
+		area.get_parent().GetHit()
+		if(!(center || area.get_parent().GetOutside())):
 			queue_free() 
