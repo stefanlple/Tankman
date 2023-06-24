@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv6cqi5cgan6r"]
+[gd_scene load_steps=10 format=3 uid="uid://bv6cqi5cgan6r"]
 
 [ext_resource type="Script" path="res://RoundEndText.gd" id="1_ci8yw"]
 [ext_resource type="Texture2D" uid="uid://budglk2ynqbxw" path="res://Assets/tiles/blue tank.png" id="2_ky26m"]
-[ext_resource type="Texture2D" uid="uid://dwyv51aph1eur" path="res://Assets/16x16.png" id="3_7l011"]
 [ext_resource type="Texture2D" uid="uid://bh6ieslbiqc0r" path="res://Assets/tiles/Green-Tank.png" id="3_y5gyc"]
+[ext_resource type="Texture2D" uid="uid://b5qkv82jepcft" path="res://new1616.png" id="4_yoamd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6mvbw"]
 line_spacing = 10.0
@@ -47,6 +47,9 @@ _data = {
 "transition": SubResource("Animation_61fn2")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_v34iv"]
+font_size = 23
+
 [node name="RoundText" type="Label"]
 self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
@@ -54,7 +57,7 @@ offset_left = -18.0
 offset_top = -16.0
 offset_right = 416.0
 offset_bottom = 415.0
-text = "Round 1
+text = "
 
 "
 label_settings = SubResource("LabelSettings_6mvbw")
@@ -66,7 +69,7 @@ script = ExtResource("1_ci8yw")
 
 [node name="Player1" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(152, 246)
+position = Vector2(149, 225)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ky26m")
 
@@ -81,7 +84,7 @@ text = "0"
 
 [node name="Player2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(271, 245)
+position = Vector2(268, 224)
 rotation = -3.14159
 scale = Vector2(2, 2)
 texture = ExtResource("3_y5gyc")
@@ -99,16 +102,16 @@ text = "0"
 modulate = Color(0.12549, 0.12549, 0.12549, 1)
 show_behind_parent = true
 position = Vector2(220.5, 216)
-scale = Vector2(25.3125, 25)
-texture = ExtResource("3_7l011")
+scale = Vector2(27.339, 27)
+texture = ExtResource("4_yoamd")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 192.0
-offset_top = 233.0
-offset_right = 232.0
-offset_bottom = 259.0
+offset_left = 189.0
+offset_top = 211.0
+offset_right = 229.0
+offset_bottom = 237.0
 text = "----"
 horizontal_alignment = 1
 
@@ -132,3 +135,16 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_jl8af")
 }
+
+[node name="RoundTexting" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 161.0
+offset_right = 422.0
+offset_bottom = 213.0
+text = "Round 1"
+label_settings = SubResource("LabelSettings_v34iv")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true

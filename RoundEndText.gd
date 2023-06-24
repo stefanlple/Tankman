@@ -20,7 +20,7 @@ func ShowText(text,l,r,winp1):
 	self.visible = true;
 	#VisbleText(true)
 	aniIn.play("transition")
-	self.set_text(text)
+	get_node("RoundTexting").set_text(text)
 	p1Text.set_text(l)
 	
 	if(winp1 == "1"):

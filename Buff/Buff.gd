@@ -1,6 +1,7 @@
 extends Node2D
 class_name Buff
 
+@onready var soundeffect = get_node("Sound")
 
 func getHit(ownerOfBullet):
 	if ownerOfBullet == "1":

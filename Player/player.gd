@@ -53,7 +53,12 @@ var inputs
 var rotate
 var lastdir = Vector2.RIGHT
 var GRID_SIZE = 16
+
 var buffActive = false
+
+var FireRateBuffed = false
+var SpeedisBuffed = false;
+
 
 
 func _ready():
@@ -84,6 +89,8 @@ func _unhandled_input(event):
 	if Input.is_action_pressed("PlaceBomb_Player" + playerNumber):  # PlaceBomb_Player1
 		if !Input.is_action_pressed("Shoot_Player" + playerNumber):
 			if BombCount > 0 && canBomb:
+				if(BombCount == 3):
+					deactivateBombIcon()
 				BombCount = BombCount - 1
 				BombPlace()
 
@@ -202,39 +209,68 @@ func _on_bomb_timer_timeout():
 
 
 func activateBuff():
+	PowerUpSound.play()
 	var randVal = randf();
 	print(randVal)
 	buffActive = true
-	deactivateAllBuffIcons()
 	if(randVal < 0.33):
+		speedBuffing()
+	elif(randVal < 0.66):
+		if (BombCount < 3):
+			bombBuffing()
+		else:
+			randVal = randVal - 0.33
+			if(randVal < 0.165):
+				fireRateBuffing()
+			else:
+				speedBuffing()
+	else:
+		fireRateBuffing()
+
+
+func speedBuffing():
+	if(SpeedisBuffed && !FireRateBuffed):
+		fireRateBuffing()
+	else:
+		SpeedisBuffed = true
 		print("Speed increased")
 		MoveSpeed = buffMoveSpeed
 		timerBuff.start()
 		speedBuff.modulate = Color(1, 1, 1, 1)
-	elif(randVal < 0.66):
-		if (BombCount < 3):
-			BombCount += 1
-			print("Bomb increased")
-			bombBuff.modulate = Color(1, 1, 1, 1)
+
+func fireRateBuffing():
+	if(FireRateBuffed && !SpeedisBuffed):
+		speedBuffing()
 	else:
+		FireRateBuffed = true
 		print("Fire rate increadsed")
 		timerBuff.start()
 		fireRateTimer.set_wait_time( buffFireRate )
 		bulletBuff.modulate = Color(1, 1, 1, 1)
+	
+
+func bombBuffing():
+	BombCount = 3
+	print("Bomb increased")
+	bombBuff.modulate = Color(1, 1, 1, 1)
 
 
 func _on_buff_timer_timeout():
 	fireRateTimer.set_wait_time( fireRate )
 	MoveSpeed = normalMoveSpeed
 	buffActive = false
+	FireRateBuffed = false
+	SpeedisBuffed = false;
 	deactivateAllBuffIcons()
 
 
 func deactivateAllBuffIcons():
 	speedBuff.modulate = Color(1, 1, 1, 0.5)
 	bulletBuff.modulate = Color(1, 1, 1, 0.5)
-	bombBuff.modulate = Color(1, 1, 1, 0.5)
+	#bombBuff.modulate = Color(1, 1, 1, 0.5)
 
+func deactivateBombIcon():
+	bombBuff.modulate = Color(1, 1, 1, 0.5)
 
 func getBuffTimer():
 	return timerBuff.time_left;	

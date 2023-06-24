@@ -18,9 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://coqkwcxb15vhg" path="res://Assets/Outerwall/image (1).jpg" id="12_lk4av"]
 [ext_resource type="Texture2D" uid="uid://c6jak4fss0idx" path="res://Assets/Outerwall/image (1).png" id="13_xen56"]
 [ext_resource type="Texture2D" uid="uid://jly7x6i823xp" path="res://Assets/Outerwall/image (2).png" id="15_hlm8k"]
-[ext_resource type="PackedScene" path="res://map3.tscn" id="17_a7q3b"]
-[ext_resource type="PackedScene" path="res://map1.tscn" id="17_ps4vk"]
-[ext_resource type="PackedScene" path="res://map2.tscn" id="18_1rykv"]
+[ext_resource type="PackedScene" uid="uid://bt36fonmfm5n" path="res://map3.tscn" id="17_a7q3b"]
+[ext_resource type="PackedScene" uid="uid://chw04bnbqyq0a" path="res://map1.tscn" id="17_ps4vk"]
+[ext_resource type="PackedScene" uid="uid://b6n2yty2hnjdh" path="res://map2.tscn" id="18_1rykv"]
 [ext_resource type="Texture2D" uid="uid://pdmba5povh2r" path="res://Assets/tiles/keymap1.2.png" id="22_0c0s6"]
 [ext_resource type="Texture2D" uid="uid://bxhj512u2m8nh" path="res://Assets/tiles/speedBuff.png" id="22_p8jud"]
 [ext_resource type="Texture2D" uid="uid://dt2i16c63ltj7" path="res://Assets/tiles/bulletBuff.png" id="23_7rvjv"]
@@ -205,7 +205,6 @@ zoom = Vector2(0.82, 0.82)
 
 [node name="Player1" parent="." instance=ExtResource("2_53gs3")]
 position = Vector2(9, 8)
-playerNumber = "1"
 texture = ExtResource("4_eolti")
 
 [node name="Player2" parent="." instance=ExtResource("2_53gs3")]
@@ -854,7 +853,7 @@ self_modulate = Color(1, 1, 1, 1)
 top_level = true
 z_index = 10
 offset_left = -35.0
-offset_top = -33.0
+offset_top = -29.0
 offset_right = 400.0
 offset_bottom = 398.0
 scale = Vector2(1.06791, 1.07498)
@@ -1082,11 +1081,11 @@ offset_bottom = 208.0
 color = Color(0.968627, 0.815686, 0.376471, 1)
 
 [node name="Image(1)" type="Sprite2D" parent="."]
-position = Vector2(157, -63)
+position = Vector2(743, 450)
 texture = ExtResource("13_xen56")
 
 [node name="UI2" type="Node2D" parent="."]
-position = Vector2(782.103, 2.08165e-12)
+position = Vector2(782, 0)
 
 [node name="ColorRect" type="ColorRect" parent="UI2"]
 offset_left = -365.0
@@ -1094,6 +1093,7 @@ offset_top = -20.0
 offset_right = -193.0
 offset_bottom = 419.0
 color = Color(1, 0.52549, 0.470588, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Keymap2" type="Sprite2D" parent="UI2/ColorRect"]
 modulate = Color(1, 1, 1, 0.490196)

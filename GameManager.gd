@@ -5,6 +5,7 @@ extends Node
 @onready var timer = get_node("Timer")
 @onready var Music = get_node("Music")
 @onready var RoundSoundEffekt = get_node("RoundSoundEffekt")
+@onready var EndSE = get_node("EndSoundEffekt")
 
 @onready var UiinScene = get_tree().get_root().get_node("/root/Ingame/RoundText");
 
@@ -74,6 +75,7 @@ func RoundEnd(Loser):
 
 func AllRoundPlayed(Winner):
 	Music.stop()
+	EndSE.play()
 	var tM = get_tree().get_root().get_node("/root/Ingame/RoundText")
 	tM.ShowText("Player " + Winner + " has Won ",str(winRat[0]),str(winRat[1]),Winner)
 	tM.ShowToNext()
