@@ -17,36 +17,39 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="ButtonGroup" id="ButtonGroup_n5kqb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hqqoe"]
+font_size = 15
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wx1fc"]
-font_size = 54
+font_size = 50
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_kpmoj")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 203.0
-offset_top = 61.0
-offset_right = 216.0
-offset_bottom = 74.0
+offset_left = 192.0
+offset_top = 51.0
+offset_right = 205.0
+offset_bottom = 64.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(6.40001, 7)
-scale = Vector2(0.8, 0.8)
+position = Vector2(6, 7)
+scale = Vector2(0.874999, 1)
 texture = ExtResource("2_libql")
 
 [node name="Label2" type="Label" parent="."]
 texture_filter = 1
-offset_left = 203.0
-offset_top = 60.0
-offset_right = 216.0
-offset_bottom = 81.0
+offset_left = 183.0
+offset_top = 50.0
+offset_right = 213.0
+offset_bottom = 70.0
 text = "?"
 label_settings = SubResource("LabelSettings_lq5va")
 horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -2)
 
 [node name="Button" type="Button" parent="."]
 texture_filter = 1
@@ -61,8 +64,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BackGroundText" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(-4, -31)
-scale = Vector2(0.21, 0.21)
+position = Vector2(0.999998, -27)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_us5ub")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -74,10 +77,10 @@ texture = ExtResource("5_ys7nl")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 57.0
-offset_top = 28.0
-offset_right = 112.0
-offset_bottom = 54.0
+offset_left = 55.0
+offset_top = 21.0
+offset_right = 110.0
+offset_bottom = 47.0
 text = "Round:"
 label_settings = SubResource("LabelSettings_lds77")
 metadata/_edit_use_anchors_ = true
@@ -85,10 +88,10 @@ metadata/_edit_use_anchors_ = true
 [node name="OptionButton" type="OptionButton" parent="."]
 texture_filter = 1
 texture_repeat = 1
-offset_left = 114.0
-offset_top = 29.0
-offset_right = 167.0
-offset_bottom = 60.0
+offset_left = 112.0
+offset_top = 22.0
+offset_right = 165.0
+offset_bottom = 53.0
 scale = Vector2(0.901617, 0.739426)
 theme = ExtResource("4_2s4g5")
 keep_pressed_outside = true
@@ -107,48 +110,46 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CheckBox" type="CheckBox" parent="."]
 texture_filter = 1
-offset_left = 51.0
-offset_top = 54.0
-offset_right = 76.0
-offset_bottom = 78.0
+offset_left = 49.0
+offset_top = 45.0
+offset_right = 74.0
+offset_bottom = 69.0
 theme = ExtResource("5_8061a")
 button_pressed = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="."]
 texture_filter = 1
-offset_left = 74.0
-offset_top = 55.0
-offset_right = 206.0
-offset_bottom = 81.0
+offset_left = 71.0
+offset_top = 45.0
+offset_right = 203.0
+offset_bottom = 71.0
 text = "WithBombTimer"
 label_settings = SubResource("LabelSettings_hqqoe")
-metadata/_edit_use_anchors_ = true
 
 [node name="HinttoShow2" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(136.5, 113.031)
-scale = Vector2(9.9375, 4.37882)
+position = Vector2(130, 100.5)
+scale = Vector2(9.375, 4.06247)
 texture = ExtResource("2_libql")
 
 [node name="HinttoShow" type="Label" parent="."]
 visible = false
 texture_filter = 1
 anchors_preset = -1
-anchor_left = -0.00257063
+anchor_left = -72.3526
 anchor_top = -0.000587463
 anchor_right = -72.3526
 anchor_bottom = 1.27616
-offset_left = 60.0
-offset_top = 80.0
-offset_right = 4418.0
-offset_bottom = 465.0
+offset_left = 58.0
+offset_top = 71.0
+offset_right = 4416.0
+offset_bottom = 456.0
 scale = Vector2(0.106566, 0.157913)
-text = "WithTimer
+text = "WithBombTimer
 - Bomb will explode after a short time
 -Bomb can be prematurely detoned per Trigger Botton
-WithoutTimer
+WithoutBombTimer
 - Bomb can only be detoned per the Trigger Botton"
 label_settings = SubResource("LabelSettings_wx1fc")
 metadata/_edit_use_anchors_ = true
