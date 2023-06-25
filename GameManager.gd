@@ -7,7 +7,7 @@ extends Node
 @onready var RoundSoundEffekt = get_node("RoundSoundEffekt")
 @onready var EndSE = get_node("EndSoundEffekt")
 
-@onready var UiinScene = get_tree().get_root().get_node("/root/Ingame/RoundText");
+#@onready var UiinScene = get_tree().get_root().get_node("/root/Ingame/RoundText");
 
 
 @export var gameOver = false

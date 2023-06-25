@@ -6,7 +6,7 @@ var mapArray = []
 @export var wallProbability = 0.9
 @export var buffProbability = 0.01
 
-@onready var music =  get_node("MusicPlayer");
+#@onready var music =  get_node("MusicPlayer");
 
 func _ready():
 	generateMap()
