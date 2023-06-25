@@ -14,7 +14,10 @@ func _ready():
 	if (trigger_OnTime):
 		get_node("AnimationPlayer").play("Bomb_onTimer");
 	elif(trigger_PerRemote):
-		get_node("AnimationPlayer").play("Bomb_onTriggerM")
+		if(BombOwner == "1"):
+			get_node("AnimationPlayer").play("Bomb_onTriggerM")
+		else:
+			get_node("AnimationPlayer").play("Bomb_onTriggerM_P2")
 	
 	var emitter = get_node("/root/GameManger")
 	emitter.end_of_Round.connect(RemoveBomb)
