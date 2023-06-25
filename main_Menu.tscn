@@ -127,12 +127,14 @@ text = "WithBombTimer"
 label_settings = SubResource("LabelSettings_hqqoe")
 
 [node name="HinttoShow2" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(130, 97.5001)
 scale = Vector2(9.375, 3.68749)
 texture = ExtResource("2_libql")
 
 [node name="HinttoShow" type="Label" parent="."]
+visible = false
 texture_filter = 1
 anchors_preset = -1
 anchor_left = -72.3526

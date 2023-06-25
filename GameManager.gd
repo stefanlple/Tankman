@@ -39,6 +39,7 @@ func _unhandled_input(event):
 			round_over = false;
 			Reload()
 	if Input.is_action_pressed("ToMenu"):
+		WithBombTimer = true;
 		winRat = [0,0];
 		gameOver = false
 		currentRound = 0;
