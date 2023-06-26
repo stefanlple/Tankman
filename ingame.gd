@@ -38,7 +38,7 @@ func generateBlocks():
 func createBlock(type, x, y):
 	var blockInstance = preload("res://Wall/static_body_2d.tscn").instantiate()
 	if type == "buff":
-		blockInstance = preload("res://Buff/buff.tscn").instantiate()
+		blockInstance = preload("res://Buff/Buff.tscn").instantiate()
 	var block = blockInstance as Node2D
 	block.position = Vector2(x * tileSize, y * tileSize)
 	add_child(block) 

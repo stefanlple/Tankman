@@ -16,11 +16,11 @@ func _ready():
 	pass
 
 
-func ShowText(text,l,r,winp1):
+func ShowText(textT,l,r,winp1):
 	self.visible = true;
 	#VisbleText(true)
 	aniIn.play("transition")
-	get_node("RoundTexting").set_text(text)
+	get_node("RoundTexting").set_text(textT)
 	p1Text.set_text(l)
 	
 	if(winp1 == "1"):

@@ -6,7 +6,7 @@ var explosion = preload("res://Explosion.tscn")
 @export var trigger_OnTime = true;
 @export var trigger_PerDamage = false;
 @export var trigger_PerRemote = true;
-@export var range = 50;
+#@export var range = 50;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
